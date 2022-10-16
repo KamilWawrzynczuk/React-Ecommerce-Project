@@ -5,6 +5,7 @@ import NavBar from "./components/main-page/NavBar";
 import "./functions/DataFetcher";
 import FixedBottomNavigation from "./components/main-page/NavBar";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import StateTextFields from "./components/user/Registration";
 function App() {
   const P = styled.p`
     color: white;
@@ -22,6 +23,7 @@ function App() {
     <Router>
       <div className="App">
         {/* <NavBar /> */}
+        <StateTextFields />
         <FixedBottomNavigation />
       </div>
     </Router>
