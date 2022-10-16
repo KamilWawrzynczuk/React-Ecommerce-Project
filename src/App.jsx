@@ -4,6 +4,7 @@ import styled from "styled-components";
 import NavBar from "./components/main-page/NavBar";
 import "./functions/DataFetcher";
 import FixedBottomNavigation from "./components/main-page/NavBar";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 function App() {
   const P = styled.p`
     color: white;
@@ -18,10 +19,12 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="App">
-      {/* <NavBar /> */}
-      <FixedBottomNavigation />
-    </div>
+    <Router>
+      <div className="App">
+        {/* <NavBar /> */}
+        <FixedBottomNavigation />
+      </div>
+    </Router>
   );
 }
 
