@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./styles/main.scss";
 import styled from "styled-components";
 import NavBar from "./components/main-page/NavBar";
-import "./functions/DataFetcher"
-import { DataFetcher } from "./functions/DataFetcher";
+import "./functions/DataFetcher";
+import FixedBottomNavigation from "./components/main-page/NavBar";
 function App() {
   const P = styled.p`
     color: white;
@@ -16,14 +16,11 @@ function App() {
   // Keep App.jsx clear
   // Keep App.jsx clear
   const [count, setCount] = useState(0);
-  
 
   return (
     <div className="App">
-      <NavBar />
-      <P>Mad site n dat</P>
-      <P>{count}</P>
-      <button onClick={() => setCount(count + 1)}>Click me harder</button>
+      {/* <NavBar /> */}
+      <FixedBottomNavigation />
     </div>
   );
 }
