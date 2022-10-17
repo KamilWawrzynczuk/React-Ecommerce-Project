@@ -1,9 +1,9 @@
-import { useState } from "react";
+import {useState } from "react";
 import "./styles/main.scss";
 import styled from "styled-components";
-import "./functions/DataFetcher";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Registration from "./components/user/Registration";
+import {BrowserRouter} from "react-router-dom";
+import Product from "./components/Product";
+
 function App() {
   const P = styled.p`
     color: white;
@@ -15,13 +15,19 @@ function App() {
   // Keep App.jsx clear
   // Keep App.jsx clear
   // Keep App.jsx clear
-  const [count, setCount] = useState(0);
+
+
+  const [count, setCount] = useState();
 
   return (
-    <Router>
-      <div className="App">{/* <NavBar /> */}</div>
-      <Registration />
-    </Router>
+
+
+    <BrowserRouter>
+      <div className="App">
+        <Product/>
+      </div>
+    </BrowserRouter>
+
   );
 }
 
