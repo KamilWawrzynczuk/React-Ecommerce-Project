@@ -3,6 +3,7 @@ import "./styles/main.scss";
 import styled from "styled-components";
 import "./functions/DataFetcher";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Registration from "./components/user/Registration";
 function App() {
   const P = styled.p`
     color: white;
@@ -19,6 +20,7 @@ function App() {
   return (
     <Router>
       <div className="App">{/* <NavBar /> */}</div>
+      <Registration />
     </Router>
   );
 }
