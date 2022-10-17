@@ -14,7 +14,7 @@ function Product() {
   useEffect(
     () => async () => {
       const res = await fetch(
-        "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/list?country=us&lang=en&currentpage=0&pagesize=30&categories=men_all&concepts=H%26M%20MAN",
+        "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/list?country=us&lang=en&currentpage=0&pagesize=30&categories=women_all&concepts=H%26M%20MAN",
         options
       );
       const data = await res.json();
@@ -26,7 +26,7 @@ function Product() {
   useEffect(
     () => async () => {
       const res = await fetch(
-        'https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/detail?lang=en&country=us&productcode=0944940005',
+        'https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/categories/list?lang=en&country=us',
         options
       );
       const data = await res.json();
@@ -39,7 +39,7 @@ function Product() {
     <div className="products_container">
       {state && state2
         ? state.results.map((ele, index) => (
-            <div className="card product_card">
+            <div key={index} className="card product_card">
               <div className="product_title">
                 <h4> {ele.name} </h4>
                 <div>
