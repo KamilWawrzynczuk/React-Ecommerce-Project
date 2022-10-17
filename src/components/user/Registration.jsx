@@ -13,18 +13,21 @@ export default function StateTextFields() {
     text-align: center;
     padding: 2rem;
   `;
-
-  const [name, setName] = React.useState("Cat in the Hat");
-  const handleChange = (event) => {
-    setName(event.target.value);
+  // set user state
+  const [user, setUserInfo] = React.useState();
+  // onChange function
+  const handleChange = (evt) => {
+    evt.preventDefault();
+    setUserInfo({ ...user, [evt.target.name]: evt.target.value });
   };
 
   return (
     <Wrapper>
       <Box
+        onChange={handleChange}
         component="form"
         sx={{
-          "& > :not(style)": { m: 1, width: "25ch" },
+          "& > :not(style)": { m: 3, width: "25ch" },
         }}
         noValidate
         autoComplete="off"
@@ -36,32 +39,32 @@ export default function StateTextFields() {
         <TextField
           id="outlined-first-name"
           label="First Name"
-          value={name}
-          onChange={handleChange}
+          name="firstName"
         />
         <TextField
           id="outlined-last-Name"
           label="Last Name"
-          defaultValue="foo"
+          defaultValue="last name"
+          name="lastName"
         />
-        <TextField id="outlined-email" label="Email" defaultValue="foo" />
+        <TextField
+          id="outlined-email"
+          label="Email"
+          defaultValue="email"
+          name="email"
+        />
 
         {/* terms and conditions section */}
         <TsAndCsWrapper>
           <Checkbox />
           <p>Agree to terms & conditions</p>
         </TsAndCsWrapper>
-
         {/* fine print */}
         <p>
           By giving us your email address we promise to always send annoying
           emails every day. By agreeing to out terms & conditions you agree to
           transfer ownership of your soul to us.
         </p>
-        <button>
-          Need to make like a submit button that updates a second state. Could
-          find a nice one from material UI.
-        </button>
       </Box>
     </Wrapper>
   );
