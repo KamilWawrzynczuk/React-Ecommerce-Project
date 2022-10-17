@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./styles/main.scss";
 import styled from "styled-components";
-import NavBar from "./components/main-page/NavBar";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import Product from "./components/Product";
-import CoverPhoto from "./components/main-page/CoverPhoto";
+import { BrowserRouter } from "react-router-dom";
 import ProductsPaginate from "./components/ProductsPaginate";
-
+import Registration from "./components/user/Registration";
+import Login from "./components/user/Login";
+import NavBar from './components/main-page/NavBar'
+import CoverPhoto from './components/main-page/CoverPhoto'
 
 function App() {
   const P = styled.p`
@@ -25,9 +25,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <NavBar />
-        <CoverPhoto />
-        <ProductsPaginate/>
+        <NavBar/>
+        <CoverPhoto/>
+        <Registration />
+        <Login />
+        <ProductsPaginate />
       </div>
     </BrowserRouter>
   );

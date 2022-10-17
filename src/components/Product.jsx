@@ -45,11 +45,9 @@ function Product({state, loading}) {
   if(loading){
     return <h2>Loading...</h2>
   }
-
-  console.log(state, 'titak')
   return (
     <div className="products_container">
-      {/* {state ? state.results.map((ele, index) => (
+      {state ? state.results.map((ele, index) => (
             <div key={index} className="card product_card">
               <div className="product_title">
                 <h4> {ele.name} </h4>
@@ -89,7 +87,7 @@ function Product({state, loading}) {
               </div>
             </div>
           ))
-        : null} */}
+        : null}
     </div>
   );
 }

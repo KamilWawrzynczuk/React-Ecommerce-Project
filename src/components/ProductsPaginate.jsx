@@ -10,12 +10,12 @@ function ProductsPaginate() {
     const [postsPerPage, setPostPerPage] = useState(10);
 
     const options = {
-        method: "GET",
+        method: 'GET',
         headers: {
-          "X-RapidAPI-Key": "0ca285cda2msh5680e3ca1426639p1dbd8fjsn7cf7707e8871",
-          "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
-        },
-      };
+            'X-RapidAPI-Key': 'da81b807a3msh6630664edd85f8cp16fe6bjsnf0cc3c8311bf',
+            'X-RapidAPI-Host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
+        }
+    };
     
       useEffect(
         () => async () => {
