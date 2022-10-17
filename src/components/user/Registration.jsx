@@ -14,11 +14,16 @@ export default function StateTextFields() {
     padding: 2rem;
   `;
   // set user state
-  const [user, setUserInfo] = React.useState();
+  const [user, setUserInfo] = React.useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
   // onChange function
   const handleChange = (evt) => {
     evt.preventDefault();
     setUserInfo({ ...user, [evt.target.name]: evt.target.value });
+    console.log(user);
   };
 
   return (
@@ -40,18 +45,22 @@ export default function StateTextFields() {
           id="outlined-first-name"
           label="First Name"
           name="firstName"
+          value={user.firstName}
         />
         <TextField
+          onChange={handleChange}
           id="outlined-last-Name"
           label="Last Name"
           defaultValue="last name"
           name="lastName"
+          value={user.lastName}
         />
         <TextField
           id="outlined-email"
           label="Email"
           defaultValue="email"
           name="email"
+          value={user.email}
         />
 
         {/* terms and conditions section */}
