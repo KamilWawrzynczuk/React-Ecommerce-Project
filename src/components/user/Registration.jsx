@@ -2,83 +2,87 @@ import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
 
+const Wrapper = styled.div`
+  margin: 3rem;
+  max-width: 900px;
+`;
+const Header = styled.h2`
+  margin: 2rem;
+`;
 function Registration() {
-  const Wrapper = styled.div`
-    font-size: 1rem;
-    font-family: monospace;
-    max-width: 1000px;
-    margin: auto;
-    margin: 2rem;
-  `;
-  const Header = styled.header`
-    // border: solid 2px;
-    border-radius: 2px;
-  `;
-  const FormWrapper = styled.div`
-    // border: solid black 3px;
-    color: black;
-  `;
-  const [user, setUser] = useState([]);
+  const [userInfo, setUserInfo] = useState({
+    email: "",
+    password: "",
+    passwordTwo: "",
+    accept: false,
+    newsletter: false,
+  });
+  const handleChange = (event) => {
+    event.preventDefault();
+    setUserInfo({ ...userInfo, [event.target.name]: event.target.value });
+  };
 
   return (
     <Wrapper>
-      <Header>Create account</Header>
-      <FormWrapper class="container text-center">
+      <Header>Register</Header>
+      <form>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">
-            Username
-          </label>
+          <label class="form-label">Email</label>
           <input
-            type="text"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">
-            Email address
-          </label>
-          <input
+            onChange={handleChange}
             type="email"
             class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            name="email"
+            value={userInfo.email}
           />
-          <div id="emailHelp" class="form-text">
+          <div class="form-text">
             We'll never share your email with anyone else.
           </div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">
-            Password
-          </label>
+          <label class="form-label">Password</label>
           <input
+            onChange={handleChange}
             type="password"
             class="form-control"
-            id="exampleInputPassword1"
+            name="password"
+            value={userInfo.password}
           />
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">
-            Re-Enter Password
-          </label>
+          <label class="form-label"> Re-enter password</label>
           <input
+            onChange={handleChange}
             type="password"
             class="form-control"
-            id="exampleInputPassword1"
+            name="passwordTwo"
+            value={userInfo.passwordTwo}
           />
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1">
-            Agree to our terms and conditions
-          </label>
+          <input
+            onChange={handleChange}
+            type="checkbox"
+            class="form-check-input"
+            name="accept"
+            value={userInfo.accept}
+          />
+          <label class="form-check-label">Accept terms and conditions</label>
+        </div>
+        <div class="mb-3 form-check">
+          <input
+            onChange={handleChange}
+            type="checkbox"
+            class="form-check-input"
+            name="newsletter"
+            value={userInfo.newsletter}
+          />
+          <label class="form-check-label">Register for newsletter</label>
         </div>
         <button type="submit" class="btn btn-primary">
           Submit
         </button>
-      </FormWrapper>
+      </form>
     </Wrapper>
   );
 }
