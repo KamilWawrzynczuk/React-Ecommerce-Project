@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function Product() {
   const [state, setState] = useState();
-
+  const [state2, setState2] = useState();
   const options = {
     method: "GET",
     headers: {
@@ -23,13 +23,25 @@ function Product() {
     []
   );
 
+  useEffect(
+    () => async () => {
+      const res = await fetch(
+        'https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/detail?lang=en&country=us&productcode=0944940005',
+        options
+      );
+      const data = await res.json();
+      setState2(data);
+    },
+    []
+  );
+
   return (
     <div className="products_container">
-      {state
+      {state && state2
         ? state.results.map((ele, index) => (
             <div className="card product_card">
               <div className="product_title">
-                <h4> {state.results[index].name} </h4>
+                <h4> {ele.name} </h4>
                 <div>
                   <i className="bi bi-heart" style={{ fontSize: "2rem" }}></i>
                 </div>
@@ -38,7 +50,7 @@ function Product() {
                 {state ? (
                   <img
                     className="card-img-top"
-                    src={state.results[index].images[0].url}
+                    src={ele.images[0].url}
                     alt="Card image cap"
                   />
                 ) : (
@@ -56,7 +68,7 @@ function Product() {
                 </div>
                 <div className="product_card_body_price">
                   <h6 className="card-title">
-                    Price: {state.results[index].price.value} Euro
+                    Price: {ele.price.value} Euro
                   </h6>
                   <a href="#" className="">
                     <i
