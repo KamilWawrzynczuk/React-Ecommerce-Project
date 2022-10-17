@@ -17,7 +17,9 @@ function Login() {
       <Header>Login</Header>
       <form>
         <div className="mb-3">
-          <label className="form-label">Email</label>
+          <label htmlFor="exampleInputEmail1" className="form-label">
+            Email
+          </label>
           <input type="email" className="form-control" />
           <div className="form-text"></div>
         </div>

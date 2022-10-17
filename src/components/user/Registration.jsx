@@ -67,9 +67,7 @@ function Registration() {
             name="accept"
             value={userInfo.accept}
           />
-          <label className="form-check-label">
-            Accept terms and conditions
-          </label>
+          <label className="form-check-label">Accept terms and conditions</label>
         </div>
         <div className="mb-3 form-check">
           <input

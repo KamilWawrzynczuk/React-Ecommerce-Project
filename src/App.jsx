@@ -2,10 +2,12 @@ import { useState } from "react";
 import "./styles/main.scss";
 import styled from "styled-components";
 import { BrowserRouter } from "react-router-dom";
-import Product from "./components/Product";
+import ProductsPaginate from "./components/ProductsPaginate";
 import Registration from "./components/user/Registration";
 import Login from "./components/user/Login";
-import NavBar from "./components/main-page/NavBar";
+import NavBar from './components/main-page/NavBar'
+import CoverPhoto from './components/main-page/CoverPhoto'
+
 function App() {
   const P = styled.p`
     color: white;
@@ -23,10 +25,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        {/* <NavBar /> */}
-        {/* <Product /> */}
+        <NavBar/>
+        <CoverPhoto/>
         <Registration />
         <Login />
+        <ProductsPaginate />
       </div>
     </BrowserRouter>
   );
