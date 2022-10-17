@@ -20,10 +20,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        {/* <NavBar /> */}
-        <FixedBottomNavigation />
-      </div>
+      <div className="App">{/* <NavBar /> */}</div>
     </Router>
   );
 }
