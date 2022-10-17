@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles/main.scss";
 import styled from "styled-components";
 
@@ -12,12 +12,12 @@ function App() {
   // Keep App.jsx clear
   // Keep App.jsx clear
   // Keep App.jsx clear
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState();
 
   return (
     <div className="App">
       <P>Mad site n dat</P>
-      <P>{count}</P>
+  
       <button onClick={() => setCount(count + 1)}>Click me harder</button>
     </div>
   );
