@@ -7,6 +7,7 @@ import Registration from "./components/user/Registration";
 import Login from "./components/user/Login";
 import NavBar from './components/main-page/NavBar'
 import CoverPhoto from './components/main-page/CoverPhoto'
+import Context from "./functions/Context";
 
 function App() {
   const P = styled.p`
@@ -23,15 +24,17 @@ function App() {
   const [count, setCount] = useState();
 
   return (
+    <Context>
     <BrowserRouter>
       <div className="App">
         <NavBar/>
         <CoverPhoto/>
         <Registration />
         <Login />
-        <ProductsPaginate />
+        {/* <ProductsPaginate /> */}
       </div>
     </BrowserRouter>
+    </Context>
   );
 }
 
