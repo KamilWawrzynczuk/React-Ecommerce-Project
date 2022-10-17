@@ -1,11 +1,9 @@
 import * as React from "react";
-import { Route, Link, Routes } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavBar() {
   return (
@@ -13,29 +11,29 @@ function NavBar() {
       <Container fluid>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Brand href="#home">H & M</Navbar.Brand>
-        <div class="d-flex">
-          <button type="button" class="btn btn-light btn-lg">
-            <i class="bi bi-person"></i>
+        <div className="d-flex">
+          <button type="button" className="btn btn-light btn-lg">
+            <i className="bi bi-person"></i>
           </button>
-          <div class="dropdown">
+          <div className="dropdown">
             <button
               type="button"
-              class="btn btn-light dropdown-toggle btn-lg"
+              className="btn btn-light dropdown-toggle btn-lg"
               data-toggle="dropdown"
             >
-              <i class="bi bi-basket"></i>
+              <i className="bi bi-basket"></i>
             </button>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">
+            <div className="dropdown-menu">
+              <a className="dropdown-item" href="#">
                 Option A
               </a>
-              <a class="dropdown-item" href="#">
+              <a className="dropdown-item" href="#">
                 Option B
               </a>
-              <a class="dropdown-item" href="#">
+              <a className="dropdown-item" href="#">
                 Option C
               </a>
-              <a class="dropdown-item" href="#">
+              <a className="dropdown-item" href="#">
                 Option D
               </a>
             </div>
