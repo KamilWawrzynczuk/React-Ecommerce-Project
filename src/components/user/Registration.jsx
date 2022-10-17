@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { useState } from "react";
 import { dataContext } from "../../functions/Context";
+import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
   margin: 3rem;
@@ -13,12 +14,15 @@ const Header = styled.h2`
 function Registration() {
   const { dispatch } = useContext(dataContext);
 
+  const navigate = useNavigate();
+
   const [userInfo, setUserInfo] = useState({
     email: "",
     password: "",
     passwordTwo: "",
     accept: false,
     newsletter: false,
+    isLogin: false,
   });
 
   const handleChange = (event) => {
@@ -29,6 +33,7 @@ function Registration() {
   function submitData(e) {
     e.preventDefault();
     dispatch({ type: "SUBMIT_USER", payload: userInfo });
+    navigate("/login");
   }
 
   return (
