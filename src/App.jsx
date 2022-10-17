@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./styles/main.scss";
 import styled from "styled-components";
 import NavBar from "./components/main-page/NavBar";
-import "./functions/DataFetcher";
+// import "./functions/DataFetcher";
 import FixedBottomNavigation from "./components/main-page/NavBar";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 function App() {
