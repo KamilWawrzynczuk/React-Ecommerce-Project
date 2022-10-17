@@ -26,60 +26,62 @@ function Registration() {
     <Wrapper>
       <Header>Register</Header>
       <form>
-        <div class="mb-3">
-          <label class="form-label">Email</label>
+        <div className="mb-3">
+          <label className="form-label">Email</label>
           <input
             onChange={handleChange}
             type="email"
-            class="form-control"
+            className="form-control"
             name="email"
             value={userInfo.email}
           />
-          <div class="form-text">
+          <div className="form-text">
             We'll never share your email with anyone else.
           </div>
         </div>
-        <div class="mb-3">
-          <label class="form-label">Password</label>
+        <div className="mb-3">
+          <label className="form-label">Password</label>
           <input
             onChange={handleChange}
             type="password"
-            class="form-control"
+            className="form-control"
             name="password"
             value={userInfo.password}
           />
         </div>
-        <div class="mb-3">
-          <label class="form-label"> Re-enter password</label>
+        <div className="mb-3">
+          <label className="form-label"> Re-enter password</label>
           <input
             onChange={handleChange}
             type="password"
-            class="form-control"
+            className="form-control"
             name="passwordTwo"
             value={userInfo.passwordTwo}
           />
         </div>
-        <div class="mb-3 form-check">
+        <div className="mb-3 form-check">
           <input
             onChange={handleChange}
             type="checkbox"
-            class="form-check-input"
+            className="form-check-input"
             name="accept"
             value={userInfo.accept}
           />
-          <label class="form-check-label">Accept terms and conditions</label>
+          <label className="form-check-label">
+            Accept terms and conditions
+          </label>
         </div>
-        <div class="mb-3 form-check">
+        <div className="mb-3 form-check">
           <input
             onChange={handleChange}
             type="checkbox"
-            class="form-check-input"
+            className="form-check-input"
             name="newsletter"
             value={userInfo.newsletter}
           />
-          <label class="form-check-label">Register for newsletter</label>
+          <label className="form-check-label">Register for newsletter</label>
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>

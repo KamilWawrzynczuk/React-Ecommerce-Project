@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import Product from "./components/Product";
 import Registration from "./components/user/Registration";
 import Login from "./components/user/Login";
+import NavBar from "./components/main-page/NavBar";
 function App() {
   const P = styled.p`
     color: white;
@@ -20,16 +21,14 @@ function App() {
   const [count, setCount] = useState();
 
   return (
-
-
     <BrowserRouter>
       <div className="App">
+        {/* <NavBar /> */}
         {/* <Product /> */}
-        {/* <Registration /> */}
+        <Registration />
         <Login />
       </div>
     </BrowserRouter>
-
   );
 }
 

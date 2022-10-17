@@ -16,18 +16,16 @@ function Login() {
     <Wrapper>
       <Header>Login</Header>
       <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">
-            Email
-          </label>
-          <input type="email" class="form-control" />
-          <div class="form-text"></div>
+        <div className="mb-3">
+          <label className="form-label">Email</label>
+          <input type="email" className="form-control" />
+          <div className="form-text"></div>
         </div>
-        <div class="mb-3">
-          <label class="form-label">Password</label>
-          <input type="password" class="form-control" />
+        <div className="mb-3">
+          <label className="form-label">Password</label>
+          <input type="password" className="form-control" />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Log in
         </button>
       </form>
