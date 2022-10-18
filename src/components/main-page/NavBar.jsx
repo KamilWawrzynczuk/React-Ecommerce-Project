@@ -14,12 +14,17 @@ function NavBar() {
     <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Toggle aria-controls="navbarScroll" />
+
+        {/* Home Button */}
+
         <Navbar.Brand>
           <Link style={{ textDecoration: "none", color: "black" }} to="/">
             H & M
           </Link>
         </Navbar.Brand>
         <div className="d-flex">
+          {/* Products Dropdown */}
+
           <DropdownButton
             style={{
               display: "flex",
@@ -47,27 +52,26 @@ function NavBar() {
               </Link>
             </Dropdown.Item>
           </DropdownButton>
+
+          {/* User Account */}
+
           <Button variant="light" size="lg">
             <Link style={{ color: "black" }} to="/Registration">
               <i className="bi bi-person"></i>
             </Link>
           </Button>
 
-          <DropdownButton
-            id="dropdown-basic-button"
-            variant="light"
-            size="lg"
-            title={
-              <span>
-                <i className="bi bi-basket"></i>
-              </span>
-            }
-          >
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-          </DropdownButton>
+          {/* Shopping Cart */}
+
+          <Button variant="light" size="lg">
+            <Link style={{ color: "black" }} to="/ShoppingCart">
+              <i className="bi bi-basket"></i>
+            </Link>
+          </Button>
         </div>
+
+        {/* Search Bar */}
+
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0"
