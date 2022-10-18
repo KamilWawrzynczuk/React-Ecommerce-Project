@@ -3,5 +3,10 @@
 }
 .align-items {
   align-items: baseline;
-  color: red;
+  col {
+    text-align: left;
+  }
+}
+.icon-size-footer {
+  font-size: 1.3rem;
 }

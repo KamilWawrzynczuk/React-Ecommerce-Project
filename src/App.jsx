@@ -18,13 +18,13 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <NavBar />
-          <Footer />
           <Routes>
             {/* <Route path="/" element={<Login />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/home" element={<CoverPhoto />} />
           </Routes>
+          <Footer />
 
           {/* <ProductsPaginate /> */}
         </div>
