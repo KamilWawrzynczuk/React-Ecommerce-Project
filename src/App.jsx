@@ -26,12 +26,11 @@ function App() {
             {/* <Product /> */}
 
             <Routes>
-              <Route path="/" element={<Login />} />
-              <Route path="/" element={<Registration />} />
+              <Route path="/Login" element={<Login />} />
+              <Route path="/Registration" element={<Registration />} />
               {/* <Route path="/" element={<CoverPhoto />} /> */}
               <Route path="/Product" element={<Product />} />
-              <Route path="/ShoppingCart" element={<CartCardComponent />} />
-              <Route path="/shoppingCart" element={<ShoppingCart />} />
+              <Route path="/ShoppingCart" element={<ShoppingCart />} />
             </Routes>
           </div>
         </BrowserRouter>
