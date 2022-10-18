@@ -10,7 +10,7 @@ const initialValue = {
       passwordTwo: "password1234",
       accept: false,
       newsletter: false,
-      isLogin: false,
+      isLogin: true,
     },
   ],
   cart: [],
@@ -19,13 +19,22 @@ const initialValue = {
 function reducer(state, action) {
   switch (action.type) {
     case "SUBMIT_USER":
-      return { ...state, users: [...state.users, action.payload] };
+      return { ...state, users: [action.payload] };
     case "IS_LOGIN":
       return {
         ...state,
         users: state.users.map((ele) => {
           if (ele.email === action.payload.email)
             return { ...ele, isLogin: true };
+          else return ele;
+        }),
+      };
+    case "IS_LOGOUT":
+      return {
+        ...state,
+        users: state.users.map((ele) => {
+          console.log(ele.isLogin, "we are map");
+          if (ele.isLogin) return { ...ele, isLogin: false };
           else return ele;
         }),
       };
@@ -49,7 +58,10 @@ function reducer(state, action) {
         ...state,
         cart: state.cart.map((ele) => {
           if (ele.name === action.payload.name)
-            return { ...ele, count: ele.count===0 ? ele.count : ele.count -1 };
+            return {
+              ...ele,
+              count: ele.count === 0 ? ele.count : ele.count - 1,
+            };
           else return ele;
         }),
       };
