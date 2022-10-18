@@ -1,39 +1,38 @@
 import React, { useEffect, useState } from "react";
 
-function Product({state, loading}) {
-  // const [state, setState] = useState();
-  //const [state2, setState2] = useState();
+function Product() {
+  const [state, setState] = useState();
+  const [state2, setState2] = useState();
 
-  // const [loading, setLoading] = useState(false);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [postsPerPage, setPostPerPage] = useState(10);
+  const [loading, setLoading] = useState(false);
+ 
 
-  // const options = {
-  //   method: "GET",
-  //   headers: {
-  //     "X-RapidAPI-Key": "0ca285cda2msh5680e3ca1426639p1dbd8fjsn7cf7707e8871",
-  //     "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
-  //   },
-  // };
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'da81b807a3msh6630664edd85f8cp16fe6bjsnf0cc3c8311bf',
+      'X-RapidAPI-Host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
+    }
+  };
+
+  useEffect(
+    () => async () => {
+      setLoading(true);
+      const res = await fetch(
+        "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/list?country=us&lang=en&currentpage=0&pagesize=30&categories=men_all&concepts=H%26M%20MAN",
+        options
+      );
+      const data = await res.json();
+      setState(data);
+      setLoading(false);
+    },
+    []
+  );
 
   // useEffect(
   //   () => async () => {
-  //     setLoading(true);
   //     const res = await fetch(
-  //       "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/list?country=us&lang=en&currentpage=0&pagesize=30&categories=men_all&concepts=H%26M%20MAN",
-  //       options
-  //     );
-  //     const data = await res.json();
-  //     setState(data);
-  //     setLoading(false);
-  //   },
-  //   []
-  // );
-
-  // useEffect(
-  //   () => async () => {
-  //     const res = await fetch(
-  //       'https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/categories/list?lang=en&country=us',
+  //       "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/categories/list?lang=en&country=us",
   //       options
   //     );
   //     const data = await res.json();
@@ -42,12 +41,13 @@ function Product({state, loading}) {
   //   []
   // );
 
-  if(loading){
-    return <h2>Loading...</h2>
+  if (loading) {
+    return <h2>Loading...</h2>;
   }
   return (
     <div className="products_container">
-      {state ? state.results.map((ele, index) => (
+      {state
+        ? state.results.map((ele, index) => (
             <div key={index} className="card product_card">
               <div className="product_title">
                 <h4> {ele.name} </h4>
