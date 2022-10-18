@@ -20,16 +20,17 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <NavBar />
-            {/* <CartCardComponent />
+            {/* <CartCardComponent /> */}
             <CoverPhoto />
-            <Product /> */}
-         
+            {/* <Product /> */}
+
             <Routes>
-            <Route path="/Login" element={<Login />} /> 
-            <Route path="/Registration" element={<Registration />} />
-            <Route path="/" element={<CoverPhoto />} />
-            <Route path="/" element={<Product/>} />
-          </Routes> 
+              <Route path="/" element={<Login />} />
+              <Route path="/" element={<Registration />} />
+              {/* <Route path="/" element={<CoverPhoto />} /> */}
+              <Route path="/Product" element={<Product />} />
+              <Route path="/ShoppingCart" element={<CartCardComponent />} />
+            </Routes>
           </div>
         </BrowserRouter>
       </FetchContext>
