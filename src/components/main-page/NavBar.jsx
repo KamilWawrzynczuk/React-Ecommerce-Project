@@ -86,7 +86,7 @@ function NavBar() {
               aria-label="Search"
             />
             <Button variant="light">
-              <i class="bi bi-search"></i>
+              <i className="bi bi-search"></i>
             </Button>
           </Form>
         </Navbar.Collapse>
