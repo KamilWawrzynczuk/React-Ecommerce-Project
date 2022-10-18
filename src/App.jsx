@@ -28,14 +28,14 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <NavBar />
-          <Routes>
+          {/* <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registration" element={<Registration />} />
             <Route path="/home" element={<CoverPhoto />} />
-          </Routes>
+          </Routes> */}
 
-          {/* <ProductsPaginate /> */}
+          <ProductsPaginate /> 
         </div>
       </BrowserRouter>
     </Context>
