@@ -1,23 +1,27 @@
-import React, {useReducer} from "react";
+import React, {useContext, useReducer} from "react";
 import { Button, Card } from 'react-bootstrap';
+import { dataContext } from "../../functions/Context";
 
 function CartCardComponent() {
-    const initialState = {counter: 1}
 
-    function reducer(state, action) {switch (action.type){
-        case 'plusOne':
-            return {counter: state.counter+1}
-            break;
+    const {state, dispatch} = useContext(dataContext)
 
-            case 'minusOne':
-                if (state.counter === 0)/* don't display content */
-                return {counter: state.counter-1}
+    // const initialState = {counter: 1}
+
+    // function reducer(state, action) {switch (action.type){
+    //     case 'plusOne':
+    //         return {counter: state.counter+1}
+    //         break;
+
+    //         case 'minusOne':
+    //             if (state.counter === 0)/* don't display content */
+    //             return {counter: state.counter-1}
                  
-                break;
-            }
+    //             break;
+    //         }
     
-    }
-const [state, dispatch] = useReducer(reducer, initialState)
+    // }
+// const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
     <div className='card mb-3' style={{maxWidth: '540px', border: '1px solid rgba(0, 0, 0)'}}>
