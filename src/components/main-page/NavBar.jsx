@@ -68,22 +68,11 @@ function NavBar() {
             </Button>
           )}
 
-          {/* <Button variant="light" size="lg">
-            <Link className="nav-list-item" {
-              userState.users[0].isLogin ? to="/Registration" : "/UserInfo"
-            }>
-              <i className="bi bi-person"></i>
-            </Link>
-          </Button> */}
-
           {/* Shopping Cart */}
 
           <Button variant="light">
             <Link className="nav-list-item" to="/ShoppingCart">
               <i className="bi bi-basket basket-icon-nav-bar"></i>
-              {/* 
-                {userState.cart.length==0? null : {userState.cart.length}}
-              */}
               <span
                 ref={basketRef}
                 className={
