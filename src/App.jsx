@@ -13,9 +13,10 @@ import Context from "./functions/Context";
 import Product from "./components/Product";
 import CartCardComponent from "./components/purchases/CartCardComponent";
 import FetchContext from "./functions/fetchContext";
-import WomenProducts from './components/WomenProducts'
+import WomenProducts from "./components/WomenProducts";
 import Footer from "./components/main-page/Footer";
 import UserInfo from "./components/user/UserInfo";
+
 
 function App() {
   return (
@@ -24,15 +25,17 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <NavBar />
-            <UserInfo />
-            <CoverPhoto />
+            {/* <UserInfo />
+            <CoverPhoto /> */}
 
             <Routes>
-              <Route path="/Login" element={<Login />} />
-              <Route path="/Registration" element={<Registration />} />
-              {/* <Route path="/" element={<CoverPhoto />} /> */}
-              <Route path="/Product" element={<Product />} />
-              <Route path="/ShoppingCart" element={<CartCardComponent />} />
+            
+                <Route path="/Login" element={<Login />} />
+                <Route path="/Registration" element={<Registration />} />
+                {/* <Route path="/" element={<CoverPhoto />} /> */}
+                <Route path="/Product" element={<Product />} />
+                <Route path="/ShoppingCart" element={<CartCardComponent />} />
+             
             </Routes>
           </div>
         </BrowserRouter>
