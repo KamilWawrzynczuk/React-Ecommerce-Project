@@ -8,8 +8,12 @@ import Dropdown from "react-bootstrap/Dropdown";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import { Route, Link } from "react-router-dom";
+import { dataContext } from "../../functions/Context";
 
 function NavBar() {
+  const { userState, dispatchUserState } = React.useContext(dataContext);
+  const basketRef = React.useRef();
+
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -62,6 +66,19 @@ function NavBar() {
           <Button variant="light">
             <Link className="nav-list-item" to="/ShoppingCart">
               <i className="bi bi-basket basket-icon-nav-bar"></i>
+              {/* 
+                {userState.cart.length==0? null : {userState.cart.length}}
+              */}
+              <span
+                ref={basketRef}
+                className={
+                  userState.cart.length !== 0
+                    ? "amount_of_products_in_basket "
+                    : ""
+                }
+              >
+                {userState.cart.length === 0 ? null : userState.cart.length}
+              </span>
             </Link>
           </Button>
         </div>

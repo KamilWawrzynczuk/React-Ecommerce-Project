@@ -22,13 +22,7 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <NavBar />
-            <Routes>
-              {/* <Route path="/" element={<Login />} /> */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/registration" element={<Registration />} />
-              <Route path="/home" element={<CoverPhoto />} />
-            </Routes>
-            <Footer />
+            <CoverPhoto />
 
             <Routes>
               <Route path="/" element={<Login />} />
@@ -43,5 +37,4 @@ function App() {
     </Context>
   );
 }
-
 export default App;
