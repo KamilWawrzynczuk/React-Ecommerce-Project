@@ -1,10 +1,15 @@
 import React from 'react'
-import HomeCarousel from './home_components/Carousel'
+import ChooseCollection from './ChooseCollection'
+import CoverPhoto from './CoverPhoto'
+import Gallery from './Gallery'
+
 
 function Home() {
   return (
     <div>
-        <HomeCarousel/>
+        <CoverPhoto/>
+        <ChooseCollection/>
+        <Gallery/>
     </div>
   )
 }
