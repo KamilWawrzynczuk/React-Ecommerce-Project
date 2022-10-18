@@ -7,30 +7,57 @@ function Product() {
 
   const [loading, setLoading] = useState(false);
 
+  const [state2, setState2] = useState();
+
   const { state, dispatch } = useContext(fetchContext);
   const { userState, dispatchUserState } = useContext(dataContext);
 
-  const options = {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': 'f0795b8e80mshc05e0a4abcdbd82p1b100ajsn97cb4c242de9',
-      'X-RapidAPI-Host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
-    }
-  };
 
+  const options = {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'X-RapidAPI-Key': 'f0795b8e80mshc05e0a4abcdbd82p1b100ajsn97cb4c242de9',
+      'X-RapidAPI-Host': 'zappos1.p.rapidapi.com'
+    },
+    body: '[{"facetField":"zc1","values":["Clothing"]},{"facetField":"zc2","values":["Swimwear","Underwear & Intimates"]},{"facetField":"txAttrFacet_Gender","values":["Women","Girls"]}]'
+  };
   useEffect(
     () => async () => {
       setLoading(true);
-      const res = await fetch(
-        "https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/list?country=us&lang=en&currentpage=0&pagesize=30&categories=men_all&concepts=H%26M%20MAN",
+      const res = await fetch('https://zappos1.p.rapidapi.com/products/list?page=1&limit=100&sort=relevance%2Fdesc',
         options
       );
       const data = await res.json();
-      dispatch({ type: "FETCH_PRODUCTS", payload: data.results });
+      dispatch({ type: "FETCH_PRODUCTS_WOMAN", payload: data.results });
       setLoading(false);
     },
     []
   );
+
+
+  const options2 = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'f0795b8e80mshc05e0a4abcdbd82p1b100ajsn97cb4c242de9',
+      'X-RapidAPI-Host': 'zappos1.p.rapidapi.com'
+    }
+  };
+
+  //    if(state.productsWoman.length!==0) {
+  //       useEffect(
+  //     () => async () => {
+  //       setLoading(true);
+  //       const res = await fetch(`https://zappos1.p.rapidapi.com/products/detail?productId=${state.productsWoman}}`,
+  //         options2
+  //       );
+  //       const data = await res.json();
+  //       setState2(data)
+  //       setLoading(false);
+  //     },
+  //     []
+  //   );
+  //  }
 
   function AddToCart(name, image, price, count) {
     dispatchUserState({
@@ -44,7 +71,10 @@ function Product() {
   }
   return (
     <div className="products_container">
-      {state.productsMan.map((ele, index) => (
+      
+ 
+      {/* {<div>
+        {state.productsWoman.map((ele,index)=>(
         <div key={index} className="card product_card">
           <div className="product_title">
             <h4> {ele.name} </h4>
@@ -87,7 +117,12 @@ function Product() {
             </div>
           </div>
         </div>
-      ))}
+      ))} 
+      </div>  */}
+
+
+      
+     
     </div>
   );
 }

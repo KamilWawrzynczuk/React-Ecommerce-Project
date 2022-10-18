@@ -12,6 +12,7 @@ import Context from "./functions/Context";
 import Product from "./components/Product";
 import CartCardComponent from "./components/purchases/CartCardComponent";
 import FetchContext from "./functions/fetchContext";
+import WomenProducts from './components/WomenProducts'
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
               <Route path="/" element={<Login />} />
               <Route path="/" element={<Registration />} />
               {/* <Route path="/" element={<CoverPhoto />} /> */}
-              <Route path="/Product" element={<Product />} />
+              <Route path="/Product" element={<WomenProducts />} />
               <Route path="/ShoppingCart" element={<CartCardComponent />} />
             </Routes>
           </div>
