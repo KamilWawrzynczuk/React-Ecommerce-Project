@@ -4,6 +4,9 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Dropdown from "react-bootstrap/Dropdown";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import { Route, Link } from "react-router-dom";
 
 function NavBar() {
@@ -12,37 +15,58 @@ function NavBar() {
       <Container fluid>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Brand>
-          <Link to="/">Home</Link>
+          <Link style={{ textDecoration: "none", color: "black" }} to="/">
+            H & M
+          </Link>
         </Navbar.Brand>
         <div className="d-flex">
-          <button type="button" className="btn btn-light btn-lg">
-            <Link to="/Registration">
+          <DropdownButton
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            id="dropdown-basic-button"
+            variant="light"
+            size="md"
+            title="Products"
+          >
+            <Dropdown.Item href="#/action-1">
+              <Link style={{ textDecoration: "none", color: "black" }} to="/">
+                Men's
+              </Link>
+            </Dropdown.Item>
+            <Dropdown.Item href="#/action-2">
+              <Link style={{ textDecoration: "none", color: "black" }} to="/">
+                Women's
+              </Link>
+            </Dropdown.Item>
+            <Dropdown.Item href="#/action-3">
+              <Link style={{ textDecoration: "none", color: "black" }} to="/">
+                Children's
+              </Link>
+            </Dropdown.Item>
+          </DropdownButton>
+          <Button variant="light" size="lg">
+            <Link style={{ color: "black" }} to="/Registration">
               <i className="bi bi-person"></i>
             </Link>
-          </button>
-          <div className="dropdown">
-            <button
-              type="button"
-              className="btn btn-light dropdown-toggle btn-lg"
-              data-toggle="dropdown"
-            >
-              <i className="bi bi-basket"></i>
-            </button>
-            <div className="dropdown-menu">
-              <a className="dropdown-item" href="#">
-                Option A
-              </a>
-              <a className="dropdown-item" href="#">
-                Option B
-              </a>
-              <a className="dropdown-item" href="#">
-                Option C
-              </a>
-              <a className="dropdown-item" href="#">
-                Option D
-              </a>
-            </div>
-          </div>
+          </Button>
+
+          <DropdownButton
+            id="dropdown-basic-button"
+            variant="light"
+            size="lg"
+            title={
+              <span>
+                <i className="bi bi-basket"></i>
+              </span>
+            }
+          >
+            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+          </DropdownButton>
         </div>
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -57,7 +81,9 @@ function NavBar() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="light">
+              <i class="bi bi-search"></i>
+            </Button>
           </Form>
         </Navbar.Collapse>
       </Container>
