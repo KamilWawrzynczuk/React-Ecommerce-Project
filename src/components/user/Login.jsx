@@ -5,13 +5,22 @@ import styled from "styled-components";
 import { dataContext } from "../../functions/Context";
 
 const Wrapper = styled.div`
-  max-width: 900px;
-  margin: auto;
-  with: 100vw;
+  max-width: 28rem;
+  height: 30rem;
+  margin: 2rem auto;
+  
+  width: 100vw;
+  border: solid 1px rgb(0,0,0);
+  border-radius: 4px;
+  background-color: rgba(255,255,255);
+  box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.2), 9px 9px 15px -2px rgba(0,0,0,0.1);
 `;
 const Header = styled.h2`
-  margin: 2rem;
+  margin: 2rem auto 3rem;
+  text-align: center;
+  letter-spacing: 4px
 `;
+
 function Login() {
   const { state, dispatch } = useContext(dataContext);
   const [userInfo, setUserInfo] = useState();
@@ -37,7 +46,7 @@ function Login() {
 
   return (
     <Wrapper>
-      <Header>Login</Header>
+      <Header>LOGIN</Header>
       <form onSubmit={submitData} onChange={handleChange}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
@@ -50,11 +59,11 @@ function Login() {
           <label className="form-label">Password</label>
           <input type="password" name="password" className="form-control" />
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="login-btn btn btn-outline-dark">
           Log in
         </button>
       </form>
-      <Link to="/Registration">Not register yet? Click here.</Link>
+      <Link className="login-link" to="/Registration">Not registered yet? Click here.</Link>
     </Wrapper>
   );
 }
