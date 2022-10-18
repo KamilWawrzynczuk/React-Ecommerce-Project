@@ -13,7 +13,7 @@ const Header = styled.h2`
   margin: 2rem;
 `;
 function Login() {
-  const { state, dispatch } = useContext(dataContext);
+  const { userState, dispatchUserState } = useContext(dataContext);
   const [userInfo, setUserInfo] = useState();
   const navigate = useNavigate();
 
@@ -24,13 +24,13 @@ function Login() {
 
   function submitData(e) {
     e.preventDefault();
-    for (let user of state.users) {
+    for (let user of userState.users) {
       if (
         user.email === userInfo.email &&
         user.password === userInfo.password
       ) {
-        dispatch({ type: "IS_LOGIN", payload: userInfo });
-        navigate("/home");
+        dispatchUserState({ type: "IS_LOGIN", payload: userInfo });
+        navigate("/");
       }
     }
   }

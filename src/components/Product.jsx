@@ -11,11 +11,11 @@ function Product() {
   const { userState, dispatchUserState } = useContext(dataContext);
 
   const options = {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "X-RapidAPI-Key": "da81b807a3msh6630664edd85f8cp16fe6bjsnf0cc3c8311bf",
-      "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
-    },
+      'X-RapidAPI-Key': 'f0795b8e80mshc05e0a4abcdbd82p1b100ajsn97cb4c242de9',
+      'X-RapidAPI-Host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
+    }
   };
 
   useEffect(
