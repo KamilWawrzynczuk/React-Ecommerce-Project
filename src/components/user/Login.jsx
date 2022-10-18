@@ -5,8 +5,9 @@ import styled from "styled-components";
 import { dataContext } from "../../functions/Context";
 
 const Wrapper = styled.div`
-  margin: 3rem;
   max-width: 900px;
+  margin: auto;
+  with: 100vw;
 `;
 const Header = styled.h2`
   margin: 2rem;

@@ -4,16 +4,21 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { Route, Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Brand href="#home">H & M</Navbar.Brand>
+        <Navbar.Brand>
+          <Link to="/">Home</Link>
+        </Navbar.Brand>
         <div className="d-flex">
           <button type="button" className="btn btn-light btn-lg">
-            <i className="bi bi-person"></i>
+            <Link to="/Registration">
+              <i className="bi bi-person"></i>
+            </Link>
           </button>
           <div className="dropdown">
             <button
@@ -44,12 +49,7 @@ function NavBar() {
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
             navbarScroll
-          >
-            <Nav.Link href="#action2">Women's</Nav.Link>
-            <Nav.Link href="#action2">Men's</Nav.Link>
-            <Nav.Link href="#action2">Children's</Nav.Link>
-            <Nav.Link href="#action2">About</Nav.Link>
-          </Nav>
+          ></Nav>
           <Form className="d-flex">
             <Form.Control
               type="search"
