@@ -18,7 +18,7 @@ function NavBar() {
         {/* Home Button */}
 
         <Navbar.Brand>
-          <Link style={{ textDecoration: "none", color: "black" }} to="/">
+          <Link className="nav-list-item" to="/">
             H & M
           </Link>
         </Navbar.Brand>
@@ -26,28 +26,24 @@ function NavBar() {
           {/* Products Dropdown */}
 
           <DropdownButton
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
+            className="drop-down-button"
             id="dropdown-basic-button"
             variant="light"
             size="md"
             title="Products"
           >
-            <Dropdown.Item href="#/action-1">
-              <Link style={{ textDecoration: "none", color: "black" }} to="/">
+            <Dropdown.Item>
+              <Link className="nav-list-item" to="/Product">
                 Men's
               </Link>
             </Dropdown.Item>
-            <Dropdown.Item href="#/action-2">
-              <Link style={{ textDecoration: "none", color: "black" }} to="/">
+            <Dropdown.Item>
+              <Link className="nav-list-item" to="/Product">
                 Women's
               </Link>
             </Dropdown.Item>
-            <Dropdown.Item href="#/action-3">
-              <Link style={{ textDecoration: "none", color: "black" }} to="/">
+            <Dropdown.Item>
+              <Link className="nav-list-item" to="/Product">
                 Children's
               </Link>
             </Dropdown.Item>
@@ -56,16 +52,16 @@ function NavBar() {
           {/* User Account */}
 
           <Button variant="light" size="lg">
-            <Link style={{ color: "black" }} to="/Registration">
+            <Link className="nav-list-item" to="/Registration">
               <i className="bi bi-person"></i>
             </Link>
           </Button>
 
           {/* Shopping Cart */}
 
-          <Button variant="light" size="lg">
-            <Link style={{ color: "black" }} to="/ShoppingCart">
-              <i className="bi bi-basket"></i>
+          <Button variant="light">
+            <Link className="nav-list-item" to="/ShoppingCart">
+              <i className="bi bi-basket basket-icon-nav-bar"></i>
             </Link>
           </Button>
         </div>
