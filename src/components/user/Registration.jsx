@@ -5,11 +5,20 @@ import { dataContext } from "../../functions/Context";
 import { useNavigate } from "react-router-dom";
 
 const Wrapper = styled.div`
-  margin: 3rem;
-  max-width: 900px;
+max-width: 28rem;
+height: 36rem;
+margin: 0.5rem auto;
+
+width: 100vw;
+border: solid 1px rgb(0,0,0);
+border-radius: 4px;
+background-color: rgba(255,255,255);
+box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.2), 9px 9px 15px -2px rgba(0,0,0,0.1);
 `;
 const Header = styled.h2`
-  margin: 2rem;
+margin: 2rem auto 1.8rem;
+text-align: center;
+letter-spacing: 4px
 `;
 function Registration() {
   const { dispatchUserState } = useContext(dataContext);
@@ -38,7 +47,7 @@ function Registration() {
 
   return (
     <Wrapper>
-      <Header>Register</Header>
+      <Header>REGISTER</Header>
       <form onSubmit={submitData} onChange={handleChange}>
         <div className="mb-3">
           <label className="form-label">Email</label>
@@ -95,7 +104,7 @@ function Registration() {
           />
           <label className="form-check-label">Register for newsletter</label>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="login-btn btn btn-outline-dark">
           Submit
         </button>
       </form>

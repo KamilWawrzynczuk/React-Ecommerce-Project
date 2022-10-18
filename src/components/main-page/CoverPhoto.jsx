@@ -11,8 +11,8 @@ function CoverPhoto() {
       </div>
       <div className="cover_photo_button">
         <Link to="/Product">
-          <button type="button" className="btn btn-outline-light">
-            Go shopping!
+          <button type="button" className="cover-btn btn btn-outline-light">
+            Buy now
           </button>
         </Link>
       </div>
