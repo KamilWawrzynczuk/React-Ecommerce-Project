@@ -1,60 +1,81 @@
-import React, {useContext, useReducer} from "react";
-import { Button, Card } from 'react-bootstrap';
+import React, { useContext, useReducer } from "react";
+import { Button, Card } from "react-bootstrap";
 import { dataContext } from "../../functions/Context";
 
 function CartCardComponent() {
+  const { userState, dispatchUserState } = useContext(dataContext);
 
-    const {state, dispatch} = useContext(dataContext)
+  // const initialState = {counter: 1}
 
-    // const initialState = {counter: 1}
+  // function reducer(state, action) {switch (action.type){
+  //     case 'plusOne':
+  //         return {counter: state.counter+1}
+  //         break;
 
-    // function reducer(state, action) {switch (action.type){
-    //     case 'plusOne':
-    //         return {counter: state.counter+1}
-    //         break;
+  //         case 'minusOne':
+  //             if (state.counter === 0)/* don't display content */
+  //             return {counter: state.counter-1}
 
-    //         case 'minusOne':
-    //             if (state.counter === 0)/* don't display content */
-    //             return {counter: state.counter-1}
-                 
-    //             break;
-    //         }
-    
-    // }
-// const [state, dispatch] = useReducer(reducer, initialState)
+  //             break;
+  //         }
 
-  return (
-    <div className='card mb-3' style={{maxWidth: '540px', border: '1px solid rgba(0, 0, 0)'}}>
-      <div className='row g-0'>
-        <div className='col-md-5'>
+  // }
+  // const [state, dispatch] = useReducer(reducer, initialState)
 
-            <div className='bg-primary rounded-2' style={{height: '200px', width: '200px',border: '1px solid rgba(0, 0, 0)' }}>IMAGE</div>
-          {/* <img src=“...” className=“img-thumbnail rounded-2" alt=“...“></img> */}
-       </div>
-        <div className='col-md-5'>
-          <div className='card-body'>
-            <h5 className='card-title'>Name of Product</h5>
-            <p className='card-text'>Description of Product. Taken from API</p> 
-             <span>
-              <button type='button' className='btn btn-outline-secondary' onClick={()=>dispatch({type: 'plusOne'})}>
-                +
-              </button>
-              <p>Quantity</p>
-              <button type='button' className='btn btn-outline-secondary' onClick={()=>dispatch({type: 'minusOne'})}>
-                -
-              </button>
-            </span>
-             <p className='card-text'>
-              <small className='text-muted'>Last updated 3 mins ago</small>
-            </p>
+  if (userState.cart.length === 0) {
+    return <div></div>;
+  } else {
+    return (
+      <div>
+        {userState.cart.map((ele) => (
+          <div className="card mb-3">
+            <div className="row g-0">
+              <div className="col-md-5">
+                <img
+                  src={ele.image.url}
+                  className="img-thumbnail rounded-2"
+                  alt="..."
+                ></img>
+              </div>
+              <div className="col-md-5">
+                <div className="card-body">
+                  <h5 className="card-title">{ele.name}</h5>
+                  <p className="card-text">
+                    Description of Product. Taken from API
+                  </p>
+                  <p>Quanity: {ele.count}</p>
+                  <div className="card_buttons">
+                    <button
+                      type="button"
+                      className="btn btn-outline-secondary"
+                      onClick={() =>
+                        dispatchUserState({ type: "ADD_TO_CART", payload: ele })
+                      }
+                    >
+                      +
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-outline-secondary"
+                      onClick={() =>
+                        dispatchUserState({
+                          type: "REMOVE_FROM_CART",
+                          payload: ele,
+                        })
+                      }
+                    >
+                      -
+                    </button>
+                  </div>
+                  <p>Price: {(ele.price * ele.count).toFixed(2)}</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div> 
-     </div>
-
-  
-  
-  );
+        ))}
+      </div>
+    );
+  }
 }
 
 export default CartCardComponent;

@@ -20,9 +20,10 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <NavBar />
+            <CartCardComponent />
             {/* <CoverPhoto /> */}
             <Product />
-            <CartCardComponent />
+         
             {/* <Routes>
             <Route path="/" element={<Login />} /> 
             <Route path="/" element={<Registration />} />
