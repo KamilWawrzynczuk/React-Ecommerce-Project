@@ -49,7 +49,7 @@ function reducer(state, action) {
         ...state,
         cart: state.cart.map((ele) => {
           if (ele.name === action.payload.name)
-            return { ...ele, count: ele.count + 1 };
+            return { ...ele, count: ele.count===0 ? ele.count : ele.count -1 };
           else return ele;
         }),
       };
