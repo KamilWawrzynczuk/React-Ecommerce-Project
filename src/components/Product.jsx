@@ -52,7 +52,7 @@ function Product() {
       {state.products.map((ele, index) => (
         <div key={index} className="card product_card">
           <div className="product_title">
-            <h4> {ele.name} </h4>
+            <h4 className="product_h4"> {ele.name} </h4>
             <div>
               <i className="bi bi-heart" style={{ fontSize: "2rem" }}></i>
             </div>
@@ -73,9 +73,9 @@ function Product() {
               </p>
             </div>
             <div className="product_card_body_price">
-              <h6 className="card-title">Price: {ele.price.value} Euro</h6>
+              <h6 className="card-title">PRICE: {ele.price.value} €</h6>
               <a href="#" className="">
-                <button
+                <button className="product_card_btn btn btn-outline-dark"
                   onClick={() =>
                     AddToCart(
                       ele.name,
@@ -84,7 +84,6 @@ function Product() {
                       (ele.count = 1)
                     )
                   }
-                  className="product_card_body_button"
                 >
                   <i className="bi bi-basket"></i>
                 </button>

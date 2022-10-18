@@ -23,7 +23,7 @@ function NavBar() {
 
         <Navbar.Brand>
           <Link className="nav-list-item" to="/">
-            H & M
+            A S K
           </Link>
         </Navbar.Brand>
         <div className="d-flex">
