@@ -16,6 +16,7 @@ import FetchContext from "./functions/fetchContext";
 import WomenProducts from "./components/WomenProducts";
 import Footer from "./components/main-page/Footer";
 import UserInfo from "./components/user/UserInfo";
+import Home from "./components/main-page/Home";
 
 
 function App() {
@@ -25,18 +26,18 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <NavBar />
-            {/* <UserInfo />
-            <CoverPhoto /> */}
-
+            <Home/>
+            {/* <CoverPhoto />
             <Routes>
-            
-                <Route path="/Login" element={<Login />} />
-                <Route path="/Registration" element={<Registration />} />
-                {/* <Route path="/" element={<CoverPhoto />} /> */}
-                <Route path="/Product" element={<Product />} />
-                <Route path="/ShoppingCart" element={<CartCardComponent />} />
-             
+              <Route path="/" element={<CoverPhoto />} />
+              <Route path="/" element={<Footer />} />
+              <Route path="/UserInfo" element={<UserInfo />} />
+              <Route path="/Login" element={<Login />} />
+              <Route path="/Registration" element={<Registration />} />
+              <Route path="/Product" element={<Product />} />
+              <Route path="/ShoppingCart" element={<CartCardComponent />} />
             </Routes>
+            <Footer /> */}
           </div>
         </BrowserRouter>
       </FetchContext>
