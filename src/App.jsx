@@ -6,12 +6,14 @@ import ProductsPaginate from "./components/ProductsPaginate";
 import Registration from "./components/user/Registration";
 import Login from "./components/user/Login";
 import NavBar from "./components/main-page/NavBar";
+
 import CoverPhoto from "./components/main-page/CoverPhoto";
 import Payment from "./components/purchases/Payment";
 import Context from "./functions/Context";
 import Product from "./components/Product";
 import CartCardComponent from "./components/purchases/CartCardComponent";
 import FetchContext from "./functions/fetchContext";
+import Footer from "./components/main-page/Footer";
 
 function App() {
   return (
@@ -20,9 +22,13 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <NavBar />
-            {/* <CartCardComponent /> */}
-            <CoverPhoto />
-            {/* <Product /> */}
+            <Routes>
+              {/* <Route path="/" element={<Login />} /> */}
+              <Route path="/login" element={<Login />} />
+              <Route path="/registration" element={<Registration />} />
+              <Route path="/home" element={<CoverPhoto />} />
+            </Routes>
+            <Footer />
 
             <Routes>
               <Route path="/" element={<Login />} />
