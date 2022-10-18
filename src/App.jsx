@@ -9,6 +9,7 @@ import NavBar from "./components/main-page/NavBar";
 import CoverPhoto from "./components/main-page/CoverPhoto";
 import Payment from "./components/purchases/Payment";
 import Context from "./functions/Context";
+import ShoppingCart from "./components/purchases/ShoppingCart";
 
 function App() {
   return (
@@ -17,13 +18,14 @@ function App() {
         <div className="App">
           <NavBar />
           <Routes>
-            {/* <Route path="/" element={<Login />} /> */}
-            {/* <Route path="/login" element={<Login />} /> */}
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/registration" element={<Registration />} />
+            <Route path="/shoppingCart" element={<ShoppingCart />} />
             <Route path="/home" element={<CoverPhoto />} />
           </Routes>
 
-          {/* <ProductsPaginate /> */}
+          <ProductsPaginate />
         </div>
       </BrowserRouter>
     </Context>
