@@ -10,3 +10,12 @@
 .basket-icon-nav-bar {
   font-size: 1.3rem;
 }
+
+.amount_of_products_in_basket {
+  position: relative;
+  padding: 4px;
+  background-color: red;
+  border-radius: 100%;
+  font-size: 10px;
+  left: -10px;
+}

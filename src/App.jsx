@@ -20,9 +20,7 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <NavBar />
-            {/* <CartCardComponent /> */}
             <CoverPhoto />
-            {/* <Product /> */}
 
             <Routes>
               <Route path="/" element={<Login />} />
@@ -37,5 +35,4 @@ function App() {
     </Context>
   );
 }
-
 export default App;
