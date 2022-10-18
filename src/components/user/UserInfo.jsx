@@ -2,9 +2,14 @@ import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { dataContext } from "../../functions/Context";
+import "../../styles/main.scss";
 
 const Wrapper = styled.div`
   color: red;
+  border: solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 function UserInfo() {
@@ -20,8 +25,17 @@ function UserInfo() {
   return (
     <div>
       <Wrapper>
-        <p>oi</p>
-        <button onClick={logOut}>log out</button>
+        <p>{userState.users[0].email}</p>
+        <p>{userState.users[0].password}</p>
+        <div className="button-container-user-info">
+          <button onClick={logOut}>log out</button>
+          <button
+            className="button-styling-user-info"
+            onClick={() => navigate("/")}
+          >
+            log out
+          </button>
+        </div>
       </Wrapper>
     </div>
   );
