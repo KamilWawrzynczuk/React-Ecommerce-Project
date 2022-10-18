@@ -6,9 +6,12 @@
 @import "nav-bar.scss";
 @import "footer.scss";
 @import "registration-login.scss";
+@import "shopping-cart.scss";
 @import "user-info.scss";
 @import "home.scss";
 @import 'gallery.scss';
+@import "shopping-cart.scss";
+@import "user-info.scss";
 
 *,
 *::before,
@@ -51,3 +54,4 @@ dd {
 html:focus-within {
   scroll-behavior: smooth;
 }
+

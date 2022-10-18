@@ -13,7 +13,7 @@ import Context from "./functions/Context";
 import Product from "./components/Product";
 import CartCardComponent from "./components/purchases/CartCardComponent";
 import FetchContext from "./functions/fetchContext";
-import WomenProducts from "./components/WomenProducts";
+import ShoppingCart from "./components/purchases/ShoppingCart";
 import Footer from "./components/main-page/Footer";
 import UserInfo from "./components/user/UserInfo";
 import Home from "./components/main-page/Home";
@@ -33,7 +33,7 @@ function App() {
               <Route path="/Login" element={<Login />} />
               <Route path="/Registration" element={<Registration />} />
               <Route path="/Product" element={<Product />} />
-              <Route path="/ShoppingCart" element={<CartCardComponent />} />
+              <Route path="/ShoppingCart" element={<ShoppingCart />} />
             </Routes>
             <Footer />
           </div>
