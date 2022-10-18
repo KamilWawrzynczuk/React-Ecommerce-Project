@@ -26,21 +26,15 @@ function NavBar() {
               className="btn btn-light dropdown-toggle btn-lg"
               data-toggle="dropdown"
             >
-              <i className="bi bi-basket"></i>
+              <Link to="/ShoppingCart">
+                <i className="bi bi-basket"></i>
+              </Link>
             </button>
             <div className="dropdown-menu">
-              <a className="dropdown-item" href="#">
-                Option A
-              </a>
-              <a className="dropdown-item" href="#">
-                Option B
-              </a>
-              <a className="dropdown-item" href="#">
-                Option C
-              </a>
-              <a className="dropdown-item" href="#">
-                Option D
-              </a>
+              <a className="dropdown-item">Option A</a>
+              <a className="dropdown-item">Option B</a>
+              <a className="dropdown-item">Option C</a>
+              <a className="dropdown-item">Option D</a>
             </div>
           </div>
         </div>

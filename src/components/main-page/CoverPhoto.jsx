@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Link } from "react";
 
 function CoverPhoto() {
   return (
@@ -8,10 +8,13 @@ function CoverPhoto() {
         <h4>Up to 50% Discount</h4>
       </div>
       <div className="cover_photo_button">
-      <button type="button" className="btn btn-outline-light">Buy now</button>
+        <Link to="/Product">
+          <button type="button" className="btn btn-outline-light">
+            Buy now
+          </button>
+        </Link>
       </div>
     </div>
-
   );
 }
 
