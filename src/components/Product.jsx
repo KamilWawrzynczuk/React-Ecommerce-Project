@@ -73,7 +73,7 @@ function Product() {
               </p>
             </div>
             <div className="product_card_body_price">
-              <h6 className="card-title">Price: {ele.price.value} €</h6>
+              <h6 className="card-title">PRICE: {ele.price.value} €</h6>
               <a href="#" className="">
                 <button className="product_card_btn btn btn-outline-dark"
                   onClick={() =>
