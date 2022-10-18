@@ -13,7 +13,7 @@ function Product() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "da81b807a3msh6630664edd85f8cp16fe6bjsnf0cc3c8311bf",
+      "X-RapidAPI-Key": "f0795b8e80mshc05e0a4abcdbd82p1b100ajsn97cb4c242de9",
       "X-RapidAPI-Host": "apidojo-hm-hennes-mauritz-v1.p.rapidapi.com",
     },
   };
@@ -47,7 +47,7 @@ function Product() {
       {state.products.map((ele, index) => (
         <div key={index} className="card product_card">
           <div className="product_title">
-            <h4> {ele.name} </h4>
+            <h4 className="product_h4"> {ele.name} </h4>
             <div>
               <i className="bi bi-heart" style={{ fontSize: "2rem" }}></i>
             </div>
@@ -68,9 +68,9 @@ function Product() {
               </p>
             </div>
             <div className="product_card_body_price">
-              <h6 className="card-title">Price: {ele.price.value} Euro</h6>
+              <h6 className="card-title">Price: {ele.price.value} €</h6>
               <a href="#" className="">
-                <button
+                <button className="product_card_btn btn btn-outline-dark"
                   onClick={() =>
                     AddToCart(
                       ele.name,
@@ -79,7 +79,6 @@ function Product() {
                       (ele.count = 1)
                     )
                   }
-                  className="product_card_body_button"
                 >
                   <i className="bi bi-basket"></i>
                 </button>
