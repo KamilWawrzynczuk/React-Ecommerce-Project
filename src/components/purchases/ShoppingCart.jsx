@@ -12,6 +12,11 @@ function ShoppingCart() {
   // Empty Cart Message
   // if (isEmpty) return <h5 className="empty-message">My Cart is Empty.</h5>;
 
+  const totalPrice = cartCardComponent.reduce(
+    (totalPrice, item) => totalPrice + item.price,
+    0
+  );
+
   return (
     // Main Container
     <Container fluid className="shopping-cart-main-container">
@@ -27,12 +32,8 @@ function ShoppingCart() {
           <div className="cart-items">
             <CartCardComponent />
           </div>
+          <div>Total Price: {totalPrice}</div>
         </Col>
-        <div>
-          <Table>
-            <tbody></tbody>
-          </Table>
-        </div>
       </Row>
     </Container>
   );
