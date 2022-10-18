@@ -56,22 +56,14 @@ function NavBar() {
           {/* User Account */}
           {userState.users[0].isLogin ? (
             <Button variant="light" size="lg">
-              <Link className="nav-list-item" to="/registration">
-                <i class="bi bi-person">
-                  <span style={{ fontSize: "10px", textDecoration: "italic" }}>
-                    sign in
-                  </span>
-                </i>
+              <Link className="nav-list-item" to="/userinfo">
+                <i class="bi bi-person-check-fill"></i>
               </Link>
             </Button>
           ) : (
             <Button variant="light" size="lg">
-              <Link className="nav-list-item" to="/userinfo">
-                <i className="bi bi-person-circle">
-                  <span style={{ fontSize: "10px", textDecoration: "italic" }}>
-                    signed in
-                  </span>
-                </i>
+              <Link className="nav-list-item" to="/registration">
+                <i class="bi bi-person"></i>
               </Link>
             </Button>
           )}

@@ -33,7 +33,7 @@ function UserInfo() {
             className="button-styling-user-info"
             onClick={() => navigate("/")}
           >
-            log out
+            Back to home
           </button>
         </div>
       </Wrapper>
