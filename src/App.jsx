@@ -6,6 +6,7 @@ import ProductsPaginate from "./components/ProductsPaginate";
 import Registration from "./components/user/Registration";
 import Login from "./components/user/Login";
 import NavBar from "./components/main-page/NavBar";
+
 import CoverPhoto from "./components/main-page/CoverPhoto";
 import Payment from "./components/purchases/Payment";
 import Context from "./functions/Context";
@@ -13,6 +14,8 @@ import Product from "./components/Product";
 import CartCardComponent from "./components/purchases/CartCardComponent";
 import FetchContext from "./functions/fetchContext";
 import WomenProducts from './components/WomenProducts'
+import Footer from "./components/main-page/Footer";
+import UserInfo from "./components/user/UserInfo";
 
 function App() {
   return (
@@ -21,11 +24,12 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <NavBar />
+            <UserInfo />
             <CoverPhoto />
 
             <Routes>
-              <Route path="/" element={<Login />} />
-              <Route path="/" element={<Registration />} />
+              <Route path="/Login" element={<Login />} />
+              <Route path="/Registration" element={<Registration />} />
               {/* <Route path="/" element={<CoverPhoto />} /> */}
               <Route path="/Product" element={<WomenProducts />} />
               <Route path="/ShoppingCart" element={<CartCardComponent />} />
