@@ -41,7 +41,8 @@ function ProductsPaginate() {
      
   return 
   (
-     <Product state={currentProduct} loading={loading}/>
+    <div></div>
+    //  <Product state={currentProduct} loading={loading}/>
       
   )
 }

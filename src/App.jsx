@@ -9,6 +9,8 @@ import NavBar from "./components/main-page/NavBar";
 import CoverPhoto from "./components/main-page/CoverPhoto";
 import Payment from "./components/purchases/Payment";
 import Context from "./functions/Context";
+import Product from "./components/Product";
+import CartCardComponent from "./components/purchases/CartCardComponent";
 
 function App() {
   return (
@@ -16,14 +18,15 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <NavBar />
-          <Routes>
-            {/* <Route path="/" element={<Login />} /> */}
-            {/* <Route path="/login" element={<Login />} /> */}
-            <Route path="/registration" element={<Registration />} />
-            <Route path="/home" element={<CoverPhoto />} />
-          </Routes> */}
-
-          <ProductsPaginate /> 
+          <CoverPhoto />
+           <Product/> 
+          <CartCardComponent />
+          {/* <Routes>
+            <Route path="/" element={<Login />} /> 
+            <Route path="/" element={<Registration />} />
+            <Route path="/" element={<CoverPhoto />} />
+            <Route path="/" element={<Product/>} />
+          </Routes>  */}
         </div>
       </BrowserRouter>
     </Context>
