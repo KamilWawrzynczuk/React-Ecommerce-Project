@@ -33,7 +33,6 @@ function reducer(state, action) {
       return {
         ...state,
         users: state.users.map((ele) => {
-          console.log(ele.isLogin, "we are map");
           if (ele.isLogin) return { ...ele, isLogin: false };
           else return ele;
         }),

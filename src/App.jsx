@@ -31,7 +31,7 @@ function App() {
               <Route path="/Login" element={<Login />} />
               <Route path="/Registration" element={<Registration />} />
               {/* <Route path="/" element={<CoverPhoto />} /> */}
-              <Route path="/Product" element={<WomenProducts />} />
+              <Route path="/Product" element={<Product />} />
               <Route path="/ShoppingCart" element={<CartCardComponent />} />
             </Routes>
           </div>

@@ -26,7 +26,7 @@ function Product() {
         options
       );
       const data = await res.json();
-      dispatch({ type: "FETCH_PRODUCTS", payload: data.results });
+      dispatch({ type: "FETCH_PRODUCTS_MAN", payload: data.results });
       setLoading(false);
     },
     []

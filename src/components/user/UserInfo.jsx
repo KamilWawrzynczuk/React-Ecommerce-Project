@@ -14,9 +14,8 @@ function UserInfo() {
   const logOut = () => {
     dispatchUserState({ type: "IS_LOGOUT" });
     navigate("/");
-    console.log("from logout function");
   };
-  console.log(userState);
+
   return (
     <div>
       <Wrapper>
