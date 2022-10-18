@@ -40,7 +40,12 @@ function Product() {
   }
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    // return <h2>Loading...</h2>;
+    return (
+      <div class="spinner-border m-5" role="status">
+        <span class="sr-only"></span>
+      </div>
+    );
   }
   return (
     <div className="products_container">

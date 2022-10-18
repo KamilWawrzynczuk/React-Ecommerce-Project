@@ -1,0 +1,45 @@
+.shopping-cart-main-container {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color: #ececec, $alpha: 1);
+  width: 95%;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: rgb(190, 190, 190) solid 1px;
+  box-shadow: 0px 20px 40px rgb(206, 206, 206);
+  border-radius: 10px;
+
+  .shopping-cart-header {
+    padding-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  .div-flex-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 15%;
+    margin: auto;
+
+    .cart-amount {
+      position: relative;
+      font-weight: bold;
+      font-size: 1.2rem;
+
+      .badge {
+        position: absolute;
+        translate: middle;
+        background-color: red;
+        border-radius: 70%;
+        font-size: 0.7rem;
+      }
+    }
+    .remove-all {
+      cursor: pointer;
+      color: #e44c4c;
+      border-bottom: 1px solid #e44c4c;
+    }
+  }
+}

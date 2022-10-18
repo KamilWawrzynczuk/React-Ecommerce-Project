@@ -21,7 +21,7 @@ text-align: center;
 letter-spacing: 4px
 `;
 function Registration() {
-  const { dispatch } = useContext(dataContext);
+  const { dispatchUserState } = useContext(dataContext);
 
   const navigate = useNavigate();
 
@@ -41,8 +41,8 @@ function Registration() {
 
   function submitData(e) {
     e.preventDefault();
-    dispatch({ type: "SUBMIT_USER", payload: userInfo });
-    navigate("/login");
+    dispatchUserState({ type: "SUBMIT_USER", payload: userInfo });
+    navigate("/Login");
   }
 
   return (
