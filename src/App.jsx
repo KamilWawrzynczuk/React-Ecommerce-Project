@@ -11,19 +11,21 @@ import Payment from "./components/purchases/Payment";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <NavBar />
-        <Payment />
+    <Context>
+      <BrowserRouter>
+        <div className="App">
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/home" element={<CoverPhoto />} />
+          </Routes>
 
-        <Routes>
-          <Route path="/" element={<CoverPhoto />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Registration" element={<Registration />} />
-        </Routes>
-        {/* <ProductsPaginate /> */}
-      </div>
-    </BrowserRouter>
+          {/* <ProductsPaginate /> */}
+        </div>
+      </BrowserRouter>
+    </Context>
   );
 }
 
