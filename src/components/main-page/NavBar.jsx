@@ -15,7 +15,7 @@ function NavBar() {
   const basketRef = React.useRef();
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar fixed="top" bg="light" expand="lg">
       <Container fluid>
         <Navbar.Toggle aria-controls="navbarScroll" />
 
@@ -61,17 +61,16 @@ function NavBar() {
               </Link>
             </Button>
           ) : (
-            <Button variant="light" size="lg">
-              <Link className="nav-list-item" to="/registration">
+            <Link className="nav-list-item" to="/registration">
+              <Button variant="light" size="lg">
                 <i class="bi bi-person"></i>
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           )}
 
           {/* Shopping Cart */}
-
-          <Button variant="light">
-            <Link className="nav-list-item" to="/ShoppingCart">
+          <Link className="nav-list-item" to="/ShoppingCart">
+            <Button variant="light">
               <i className="bi bi-basket basket-icon-nav-bar"></i>
               <span
                 ref={basketRef}
@@ -83,8 +82,8 @@ function NavBar() {
               >
                 {userState.cart.length === 0 ? null : userState.cart.length}
               </span>
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
 
         {/* Search Bar */}

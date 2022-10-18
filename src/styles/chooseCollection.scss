@@ -1,85 +1,76 @@
 .homes {
-    grid-column: center-start / center-end;
-    margin: 15rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 2rem;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 7rem;
-
+  &_link {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 
+
+.homes_h2{
+  text-align: center;
+  margin-bottom: 35px;
+}
+
 .home {
-    background-color: inherit;
-    
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-row-gap: 1.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 
-    &__img {
-    
-        grid-column: 1 / -1;
-        grid-row: 1 / 2;
-        z-index: 1;
-    }
+  width: 250px;
+  height: 300px;
 
-    &__like {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-        fill: $color-primary;
-        width: 2.5rem;
-        height: 2.5rem;
-        z-index: 2;
-        justify-self: end;
-        margin: 1rem;
-    }
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    &__name {
-        grid-row: 1 / 2;
-        grid-column: 1 / -1;
-        justify-self: center;
-        align-self: end;
-        width: 80%;
-        font-family: $font-display;
-        font-size: 1.6rem;
-        text-align: center;
-        color: #fff;
-        padding: 1.25rem;
-        background-color: $color-secondary;
-        font-weight: 400;
-        transform: translateY(50%);
-        z-index: 3;
-    }
+  &:hover {
+    background-color: blue;
+  }
 
-    &__location,
-    &__rooms {
-        margin-top: 2.5rem;
-    }
+  &_womans_cover {
+    width: 80%;
+    background-color: rgba(255, 255, 255);
+    text-align: center;
+  }
+}
 
-    &__location,
-    &__rooms,
-    &__area,
-    &__price {
+.go_to_red {
+}
 
-        font-size: 1.5rem;
-        margin-left: 2rem;
+.go_to {
+  width: 20%;
+  color: white;
+  background-color: inherit;
 
-        display: flex;
-        align-items: center;
+  padding: 0 5px;
+  text-align: center;
+  i {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+}
 
-        svg {
-            fill: $color-primary;
-            width: 2rem;
-            height: 2rem;
-            margin-right: 1rem;
-        }
+.home_man {
+  background-image: url("https://images.pexels.com/photos/1813947/pexels-photo-1813947.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
 
-        p {
+.home_woman {
+  background-image: url("https://images.pexels.com/photos/1485781/pexels-photo-1485781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
 
-        }
-    }
+  position: relative;
+  top: 50px;
+}
 
-    &__btn {
-        grid-column: 1 / -1;
-    }
+.home_kid {
+  background-image: url("https://images.pexels.com/photos/11307016/pexels-photo-11307016.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+
+  position: relative;
+  top: 100px;
 }

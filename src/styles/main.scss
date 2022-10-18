@@ -9,9 +9,10 @@
 @import "shopping-cart.scss";
 @import "user-info.scss";
 @import "home.scss";
-@import 'gallery.scss';
+@import "gallery.scss";
 @import "shopping-cart.scss";
 @import "user-info.scss";
+@import "chooseCollection.scss";
 
 *,
 *::before,
@@ -54,4 +55,3 @@ dd {
 html:focus-within {
   scroll-behavior: smooth;
 }
-

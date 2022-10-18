@@ -1,14 +1,45 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 function ChooseCollection() {
-  return ( 
-    <section className="homes">
-    <div className="home">
-        <img src="https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg" width="300px" alt="Woman 1" className="home__img"/>
-        <button className="btn home__btn">Contact relator</button>
+  return (
+    <div>
+      <h2 className="homes_h2">Our Mid-Seasons Collections:</h2>
+      <section className="homes">
+        <Link to="/Product" className="homes_link">
+          <div className="home home_man">
+            <div className="home_womans_cover">
+              <div>Man collection</div>
+            </div>
+            <div className="go_to go_to_red">
+              {" "}
+              <i class="bi bi-arrow-bar-right"></i>
+            </div>
+          </div>
+        </Link>
+        <Link to="/Product" className="homes_link">
+          <div className="home home_woman">
+            <div className="home_womans_cover">
+              <div>Woman collection</div>
+            </div>
+            <div className="go_to">
+              <i class="bi bi-arrow-bar-right"></i>
+            </div>
+          </div>
+        </Link>
+        <Link to="/Product" className="homes_link">
+          <div className="home home_kid">
+            <div className="home_womans_cover">
+              <div>Kids collection</div>
+            </div>
+            <div className="go_to">
+              <i class="bi bi-arrow-bar-right"></i>
+            </div>
+          </div>
+        </Link>
+      </section>
     </div>
-</section>
-  )
+  );
 }
 
 export default ChooseCollection;

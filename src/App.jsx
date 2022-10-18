@@ -25,7 +25,6 @@ function App() {
         <BrowserRouter>
           <div className="container-fluid">
             <NavBar />
-
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/" element={<Footer />} />

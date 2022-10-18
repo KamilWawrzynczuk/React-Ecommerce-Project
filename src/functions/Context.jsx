@@ -14,6 +14,7 @@ const initialValue = {
     },
   ],
   cart: [],
+  isLoading: true,
 };
 
 function reducer(state, action) {
@@ -29,6 +30,8 @@ function reducer(state, action) {
           else return ele;
         }),
       };
+    case "IS_LOADING":
+      return { ...state, isLoading: false };
     case "IS_LOGOUT":
       return {
         ...state,
@@ -64,6 +67,10 @@ function reducer(state, action) {
           else return ele;
         }),
       };
+      case "REMOVE_ALL_FROM_CART":
+      return {
+        ...state,
+        cart: [] };
     default:
       return state;
   }
