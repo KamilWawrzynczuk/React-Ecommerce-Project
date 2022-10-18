@@ -5,23 +5,6 @@ import { dataContext } from "../../functions/Context";
 function CartCardComponent() {
   const { userState, dispatchUserState } = useContext(dataContext);
 
-  // const initialState = {counter: 1}
-
-  // function reducer(state, action) {switch (action.type){
-  //     case 'plusOne':
-  //         return {counter: state.counter+1}
-  //         break;
-
-  //         case 'minusOne':
-  //             if (state.counter === 0)/* don't display content */
-  //             return {counter: state.counter-1}
-
-  //             break;
-  //         }
-
-  // }
-  // const [state, dispatch] = useReducer(reducer, initialState)
-
   if (userState.cart.length === 0) {
     return <div></div>;
   } else {
