@@ -3,8 +3,9 @@ import { useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  margin: 3rem;
   max-width: 900px;
+  margin: auto;
+  with: 100vw;
 `;
 const Header = styled.h2`
   margin: 2rem;
