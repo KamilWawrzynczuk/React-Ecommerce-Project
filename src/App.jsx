@@ -16,18 +16,17 @@ import FetchContext from "./functions/fetchContext";
 import ShoppingCart from "./components/purchases/ShoppingCart";
 import Footer from "./components/main-page/Footer";
 import UserInfo from "./components/user/UserInfo";
+import Home from "./components/main-page/Home";
 
 function App() {
   return (
     <Context>
       <FetchContext>
         <BrowserRouter>
-          <div className="App">
+          <div className="container-fluid">
             <NavBar />
-            {/* <CoverPhoto /> */}
-
             <Routes>
-              <Route path="/" element={<CoverPhoto />} />
+              <Route path="/" element={<Home />} />
               <Route path="/" element={<Footer />} />
               <Route path="/UserInfo" element={<UserInfo />} />
               <Route path="/Login" element={<Login />} />

@@ -3,12 +3,12 @@ import { dataContext } from "../functions/Context";
 import { fetchContext } from "../functions/fetchContext";
 
 function Product() {
-  // const [state, setState] = useState();
-
-  const [loading, setLoading] = useState(false);
+  //const [state, setState] = useState();
 
   const { state, dispatch } = useContext(fetchContext);
   const { userState, dispatchUserState } = useContext(dataContext);
+
+  const [loading, setLoading] = useState(false);
 
   const options = {
     method: "GET",
@@ -26,7 +26,7 @@ function Product() {
         options
       );
       const data = await res.json();
-      dispatch({ type: "FETCH_PRODUCTS", payload: data.results });
+      dispatch({ type: "FETCH_PRODUCTS_MAN", payload: data.results });
       setLoading(false);
     },
     []
@@ -39,59 +39,62 @@ function Product() {
     });
   }
 
-  if (loading) {
-    // return <h2>Loading...</h2>;
-    return (
-      <div class="spinner-border m-5" role="status">
-        <span class="sr-only"></span>
-      </div>
-    );
-  }
   return (
-    <div className="products_container">
-      {state.products.map((ele, index) => (
-        <div key={index} className="card product_card">
-          <div className="product_title">
-            <h4 className="product_h4"> {ele.name} </h4>
-            <div>
-              <i className="bi bi-heart" style={{ fontSize: "2rem" }}></i>
-            </div>
-          </div>
-          <div className="product_img">
-            <img
-              className="card-img-top"
-              src={ele.images[0].url}
-              alt="Card image cap"
-            />
-          </div>
+    <div>
+      <h2 style={{ margin: "25px 0" }}>A S K collection 2022:</h2>
 
-          <div className="card-body product_card_body">
-            <div>
-              <p className="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-            <div className="product_card_body_price">
-              <h6 className="card-title">PRICE: {ele.price.value} €</h6>
-              <a href="#" className="">
-                <button className="product_card_btn btn btn-outline-dark"
-                  onClick={() =>
-                    AddToCart(
-                      ele.name,
-                      ele.images[0],
-                      ele.price.value,
-                      (ele.count = 1)
-                    )
-                  }
-                >
-                  <i className="bi bi-basket"></i>
-                </button>
-              </a>
-            </div>
+      <div className="products_container">
+        {loading ? (
+          <div class="spinner-border m-5" role="status">
+            <span class="sr-only"></span>
           </div>
-        </div>
-      ))}
+        ) : (
+          state.productsMan.map((ele, index) => (
+            <div key={index} className="card product_card">
+              <div className="product_title">
+                <h4 className="product_h4"> {ele.name} </h4>
+                <div>
+                  <i className="bi bi-heart" style={{ fontSize: "2rem" }}></i>
+                </div>
+              </div>
+              <div className="product_img">
+                <img
+                  className="card-img-top"
+                  src={ele.images[0].url}
+                  alt="Card image cap"
+                />
+              </div>
+
+              <div className="card-body product_card_body">
+                <div>
+                  <p className="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                </div>
+                <div className="product_card_body_price">
+                  <h6 className="card-title">PRICE: {ele.price.value} €</h6>
+                  <a href="#" className="">
+                    <button
+                      className="product_card_btn btn btn-outline-dark"
+                      onClick={() =>
+                        AddToCart(
+                          ele.name,
+                          ele.images[0],
+                          ele.price.value,
+                          (ele.count = 1)
+                        )
+                      }
+                    >
+                      <i className="bi bi-basket"></i>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }

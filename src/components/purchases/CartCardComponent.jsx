@@ -9,7 +9,7 @@ function CartCardComponent() {
     return <div></div>;
   } else {
     return (
-      <div>
+      <div className="cart-items">
         {userState.cart.map((ele) => (
           <div className="card mb-3">
             <div className="row g-0">
