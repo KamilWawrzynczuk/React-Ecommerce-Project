@@ -11,24 +11,27 @@ import Payment from "./components/purchases/Payment";
 import Context from "./functions/Context";
 import Product from "./components/Product";
 import CartCardComponent from "./components/purchases/CartCardComponent";
+import FetchContext from "./functions/fetchContext";
 
 function App() {
   return (
     <Context>
-      <BrowserRouter>
-        <div className="App">
-          <NavBar />
-          <CoverPhoto />
-           <Product/> 
-          <CartCardComponent />
-          {/* <Routes>
+      <FetchContext>
+        <BrowserRouter>
+          <div className="App">
+            <NavBar />
+            {/* <CoverPhoto /> */}
+            <Product />
+            <CartCardComponent />
+            {/* <Routes>
             <Route path="/" element={<Login />} /> 
             <Route path="/" element={<Registration />} />
             <Route path="/" element={<CoverPhoto />} />
             <Route path="/" element={<Product/>} />
           </Routes>  */}
-        </div>
-      </BrowserRouter>
+          </div>
+        </BrowserRouter>
+      </FetchContext>
     </Context>
   );
 }
