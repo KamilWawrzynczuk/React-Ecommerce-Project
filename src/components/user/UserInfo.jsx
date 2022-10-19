@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 2rem;
+  min-height: 80vh;
 `;
 
 function UserInfo() {
@@ -22,7 +23,12 @@ function UserInfo() {
   return (
     <div>
       <Wrapper>
-        <p>email: {userState.users[0].email}</p>
+        <img
+          className="img-styles-user-info"
+          src="https://s1.reutersmedia.net/resources/r/?m=02&d=20110106&t=2&i=297909111&w=780&fh=&fw=&ll=&pl=&sq=&r=2011-01-06T234808Z_01_BTRE7051U4200_RTROPTP_0_USA"
+          alt=""
+        />
+        <p class="email-text-user-info">email: {userState.users[0].email}</p>
         <div className="button-container-user-info">
           <button
             className="btn btn-dark button-styling-user-info"

@@ -5,13 +5,14 @@ import Col from "react-bootstrap/Col";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  bottom: 0;
   min-height: 20px;
   background: rgba(255, 255, 255, 0.8);
   display: flex;
   justify-content: center;
+  align-items: flex-end
   border-top: solid 1px;
   margin-top: 2rem;
+  border: solid black 2px;
 `;
 function Footer() {
   return (
