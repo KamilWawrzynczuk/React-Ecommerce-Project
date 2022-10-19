@@ -38,28 +38,28 @@ const Wrapper = styled.div`
 
 function Footer() {
   return (
-    <Wrapper>
-      <FlexContainer>
-        <Row className="d-flex">
-          <Col className="d-flex justify-content-evenly">
-            <i className="bi bi-youtube icon-size-footer"></i>
-            <i className="bi bi-twitter icon-size-footer"></i>
-          </Col>
-          <Col>About</Col>
-          <Col>Gift cards</Col>
-          <Col>Help</Col>
-        </Row>
-        <Row className="d-flex">
-          <Col className="d-flex justify-content-evenly">
-            <i className="bi bi-facebook icon-size-footer"></i>
-            <i className="bi bi-instagram icon-size-footer"></i>
-          </Col>
-          <Col>Help</Col>
-          <Col>Stores</Col>
-          <Col>Jobs</Col>
-        </Row>
-      </FlexContainer>
-    </Wrapper>
+    <FlexContainer className="footer">
+      {/* <Row className="d-flex justify-content-around"> */}
+      <Row className="d-flex">
+        <Col className="d-flex justify-content-evenly">
+          <i className="bi bi-youtube icon-size-footer"></i>
+          <i className="bi bi-twitter icon-size-footer"></i>
+        </Col>
+        <Col>About</Col>
+        <Col>Gift cards</Col>
+        <Col>Help</Col>
+      </Row>
+      <Row className="d-flex">
+        <Col className="d-flex justify-content-evenly">
+          <i className="bi bi-facebook icon-size-footer"></i>
+          <i className="bi bi-instagram icon-size-footer"></i>
+        </Col>
+        <Col>Help</Col>
+        <Col>Stores</Col>
+        <Col>Jobs</Col>
+      </Row>
+      {/* </Row> */}
+    </FlexContainer>
   );
 }
 
