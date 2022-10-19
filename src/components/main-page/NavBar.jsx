@@ -7,12 +7,31 @@ import Form from "react-bootstrap/Form";
 import Dropdown from "react-bootstrap/Dropdown";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import DropdownButton from "react-bootstrap/DropdownButton";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, useNavigate } from "react-router-dom";
 import { dataContext } from "../../functions/Context";
+import { fetchContext } from "../../functions/fetchContext";
 
 function NavBar() {
   const { userState, dispatchUserState } = React.useContext(dataContext);
   const basketRef = React.useRef();
+
+  // state for keeping track of searching value
+  const [searchState, setSearchState] = React.useState("");
+  const { state, dispatch } = React.useContext(fetchContext);
+
+  const navigate = useNavigate();
+
+  // put search value to a state to send it to
+  // Context and
+  // Product component
+  function handleSearch(e) {
+    e.preventDefault();
+    setSearchState(e.target.value);
+  }
+
+  React.useEffect(() => {
+    dispatch({ type: "SET_SEARCH_STATE", payload: searchState });
+  }, [state]);
 
   return (
     <Navbar fixed="top" bg="light" expand="lg">
@@ -100,8 +119,9 @@ function NavBar() {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              onChange={handleSearch}
             />
-            <Button variant="light">
+            <Button onClick={() => navigate("/Product")} variant="light">
               <i className="bi bi-search"></i>
             </Button>
           </Form>
