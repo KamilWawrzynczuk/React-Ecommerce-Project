@@ -26,8 +26,9 @@ function NavBar() {
   // Product component
   React.useEffect(() => {
     dispatch({ type: "SET_SEARCH_STATE", payload: searchState });
-  }, [searchRef.current.value]);
 
+  }, [searchRef.current.value]);
+ 
   return (
     <Navbar fixed="top" bg="light" expand="lg">
       <Container fluid>
