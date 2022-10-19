@@ -29,7 +29,7 @@ function ShoppingCart() {
     // Main Container
     <Container fluid className="shopping-cart-main-container">
       <Row>
-         <h1 className="shopping-cart-header">Shopping Cart:</h1>
+         <h1 className="shopping-cart-header">SHOPPING CART:</h1>
       </Row>
       <Row>
         <Col>
@@ -58,7 +58,7 @@ function ShoppingCart() {
       <Row>
         <Col>
           <div className="shopping_total_price">
-            Total Price:{" "}
+            Total Price:{" "} 
             <strong>
               {userState.cart.length === 0
                 ? "0"

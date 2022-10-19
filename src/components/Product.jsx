@@ -84,7 +84,7 @@ function Product() {
                   <h6 className="card-title">PRICE: {ele.price.value} €</h6>
                
                     <button
-                      className="product_card_btn btn btn-outline-dark"
+                      className="product_card_btn btn btn-outline-light"
                       onClick={() =>
                         AddToCart(
                           ele.name,
