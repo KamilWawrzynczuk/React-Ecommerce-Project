@@ -5,7 +5,6 @@ import Col from "react-bootstrap/Col";
 import styled from "styled-components";
 
 const FlexContainer = styled.div`
-  height: 80vh;
   display: flex;
 `;
 const Wrapper = styled.div`
