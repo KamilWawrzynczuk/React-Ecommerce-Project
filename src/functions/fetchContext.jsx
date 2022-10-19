@@ -4,15 +4,15 @@ export const fetchContext = createContext();
 
 const initialValue = {
   productsMan: [],
-  productsWoman: [],
+  searchState: ""
 };
 
 function reducer(state, action) {
   switch (action.type) {
     case "FETCH_PRODUCTS_MAN":
-      return { productsMan: action.payload };
-    case "FETCH_PRODUCTS_WOMAN":
-      return { productsWoman: action.payload};
+      return { ...state, productsMan: action.payload };
+    case "SET_SEARCH_STATE":
+        return { ...state, searchState: action.payload};
     default:
       return state;
   }
