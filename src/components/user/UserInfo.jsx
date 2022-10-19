@@ -23,7 +23,6 @@ function UserInfo() {
     <div>
       <Wrapper>
         <p>email: {userState.users[0].email}</p>
-        <p>password: {userState.users[0].password.length}</p>
         <div className="button-container-user-info">
           <button
             className="btn btn-dark button-styling-user-info"
@@ -36,6 +35,9 @@ function UserInfo() {
             onClick={() => navigate("/")}
           >
             Back to home
+          </button>
+          <button class="btn btn-primary button-styling-user-info">
+            Change password
           </button>
         </div>
       </Wrapper>
