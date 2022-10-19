@@ -14,24 +14,19 @@ import { fetchContext } from "../../functions/fetchContext";
 function NavBar() {
   const { userState, dispatchUserState } = React.useContext(dataContext);
   const basketRef = React.useRef();
+  const searchRef = React.useRef("")
 
   // state for keeping track of searching value
   const [searchState, setSearchState] = React.useState("");
   const { state, dispatch } = React.useContext(fetchContext);
 
   const navigate = useNavigate();
-
   // put search value to a state to send it to
   // Context and
   // Product component
-  function handleSearch(e) {
-    e.preventDefault();
-    setSearchState(e.target.value);
-  }
-
   React.useEffect(() => {
     dispatch({ type: "SET_SEARCH_STATE", payload: searchState });
-  }, [state]);
+  }, [searchRef.current.value]);
 
   return (
     <Navbar fixed="top" bg="light" expand="lg">
@@ -119,7 +114,8 @@ function NavBar() {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
-              onChange={handleSearch}
+              ref={searchRef}
+              onChange={(e)=>setSearchState(e.target.value)}
             />
             <Button onClick={() => navigate("/Product")} variant="light">
               <i className="bi bi-search"></i>
