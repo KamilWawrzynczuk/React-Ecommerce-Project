@@ -67,7 +67,7 @@ function NavBar() {
 
           {/* User Account */}
 
-           {userState.users[0].isLogin ? (
+          {userState.users[0].isLogin ? (
             <DropdownButton
               className="drop-down-button"
               id="dropdown-basic-button"
@@ -78,7 +78,7 @@ function NavBar() {
               <Dropdown.Item onClick={() => navigate("/userinfo")}>
                 Your Account
               </Dropdown.Item>
-              <Dropdown.Item onClick={() => navigate("/home")}>
+              <Dropdown.Item onClick={() => navigate("/")}>
                 Log Out
               </Dropdown.Item>
             </DropdownButton>
@@ -98,7 +98,7 @@ function NavBar() {
               </Dropdown.Item>
             </DropdownButton>
           )}
-          
+
           {/* Shopping Cart */}
           <Link className="nav-list-item" to="/ShoppingCart">
             <Button variant="light">

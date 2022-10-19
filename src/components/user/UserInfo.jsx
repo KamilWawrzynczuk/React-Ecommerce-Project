@@ -9,7 +9,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 2rem;
-  min-height: 80vh;
+  width: 50vw;
+  margin: auto;
+  border: solid 1px;
+  padding: 1.2rem;
 `;
 
 function UserInfo() {
@@ -18,7 +21,7 @@ function UserInfo() {
 
   const logOut = () => {
     dispatchUserState({ type: "IS_LOGOUT" });
-    navigate("/");
+    navigate("/LogoutSuccessPage");
   };
   return (
     <div>
@@ -31,18 +34,18 @@ function UserInfo() {
         <p class="email-text-user-info">email: {userState.users[0].email}</p>
         <div className="button-container-user-info">
           <button
-            className="btn btn-dark button-styling-user-info"
+            className="over-btn btn btn-light button-styling-user-info"
             onClick={logOut}
           >
-            log out
+            log out of account
           </button>
           <button
-            className="btn btn-primary button-styling-user-info"
+            className="over-btn btn btn-light button-styling-user-info"
             onClick={() => navigate("/")}
           >
             Back to home
           </button>
-          <button class="btn btn-primary button-styling-user-info">
+          <button class="over-btn btn btn-light button-styling-user-info">
             Change password
           </button>
         </div>
