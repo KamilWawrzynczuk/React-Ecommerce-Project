@@ -41,9 +41,6 @@
   }
 }
 
-.go_to_red {
-}
-
 .go_to {
   width: 20%;
   color: white;
@@ -59,11 +56,11 @@
 
 .home_man {
   background-image: url("https://images.pexels.com/photos/1813947/pexels-photo-1813947.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  position: relative;
 }
 
 .home_woman {
   background-image: url("https://images.pexels.com/photos/1485781/pexels-photo-1485781.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-
   position: relative;
   top: 50px;
 }
@@ -73,4 +70,25 @@
 
   position: relative;
   top: 100px;
+}
+
+@media only screen and (max-width: 852px) {
+  .home_kid {
+    top: 50px;
+}
+}
+
+@media only screen and (max-width: 570px) {
+  .home_kid {
+    top: 20px;
+}
+
+.home_woman {
+  
+  top: 20px;
+}
+
+.home_man {
+  top: 20px
+}
 }
