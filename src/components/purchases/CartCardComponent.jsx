@@ -9,14 +9,14 @@ function CartCardComponent() {
     return <div></div>;
   } else {
     return (
-      <div className="cart-items">
+      <div className="product_contain cart-items">
         {userState.cart.map((ele) => (
-          <div className="card mb-3">
+          <div className=" card mb-3">
             <div className="row g-0">
-              <div className="col-md-5">
+              <div className="col-md-5 product_img">
                 <img
                   src={ele.image.url}
-                  className="img-thumbnail rounded-2"
+                  className="card-img-top"
                   alt="..."
                 ></img>
               </div>
@@ -30,7 +30,7 @@ function CartCardComponent() {
                   <div className="card_buttons">
                     <button
                       type="button"
-                      className="btn btn-outline-secondary"
+                      className="btn btn-plus btn-outline-secondary"
                       onClick={() =>
                         dispatchUserState({ type: "ADD_TO_CART", payload: ele })
                       }
