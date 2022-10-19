@@ -70,10 +70,8 @@ function reducer(state, action) {
       case "REMOVE_ITEM_FROM_CART":
       return {
         ...state,
-        cart: state.cart.filter((ele) => {
-          ele.name !== action.payload.name
-        }),
-      };
+        cart: state.cart.filter((product) => action.payload !== product)
+      }
       case "REMOVE_ALL_FROM_CART":
       return {
         ...state,
