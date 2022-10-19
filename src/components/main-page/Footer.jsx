@@ -28,7 +28,7 @@ const Wrapper = styled.div`
 
 function Footer() {
   return (
-    <FlexContainer>
+    <FlexContainer className="footer">
       {/* <Row className="d-flex justify-content-around"> */}
       <Row className="d-flex">
         <Col className="d-flex justify-content-evenly">
