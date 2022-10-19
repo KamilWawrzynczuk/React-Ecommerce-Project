@@ -59,20 +59,29 @@ function NavBar() {
             size="md"
             title="Products"
           >
-            <Dropdown.Item className="dd-btn" onClick={() => navigate("/Product")}>
+            <Dropdown.Item
+              className="dd-btn"
+              onClick={() => navigate("/Product")}
+            >
               Men's
             </Dropdown.Item>
-            <Dropdown.Item className="dd-btn" onClick={() => navigate("/Product")}>
+            <Dropdown.Item
+              className="dd-btn"
+              onClick={() => navigate("/Product")}
+            >
               Women's
             </Dropdown.Item>
-            <Dropdown.Item className="dd-btn" onClick={() => navigate("/Product")}>
+            <Dropdown.Item
+              className="dd-btn"
+              onClick={() => navigate("/Product")}
+            >
               Children's
             </Dropdown.Item>
           </DropdownButton>
 
           {/* User Account */}
 
-           {userState.users[0].isLogin ? (
+          {userState.users[0].isLogin ? (
             <DropdownButton
               className="drop-down-button"
               id="dropdown-basic-button"
@@ -80,7 +89,10 @@ function NavBar() {
               size="lg"
               title={<i className="bi bi-person-check-fill"></i>}
             >
-              <Dropdown.Item className="dd-btn" onClick={() => navigate("/userinfo")}>
+              <Dropdown.Item
+                className="dd-btn"
+                onClick={() => navigate("/userinfo")}
+              >
                 Your Account
               </Dropdown.Item>
               <Dropdown.Item onClick={logOut}>Log Out</Dropdown.Item>
@@ -93,15 +105,21 @@ function NavBar() {
               size="lg"
               title={<i className="bi bi-person"></i>}
             >
-              <Dropdown.Item className="dd-btn" onClick={() => navigate("/login")}>
+              <Dropdown.Item
+                className="dd-btn"
+                onClick={() => navigate("/login")}
+              >
                 Login
               </Dropdown.Item>
-              <Dropdown.Item className="dd-btn" onClick={() => navigate("/registration")}>
+              <Dropdown.Item
+                className="dd-btn"
+                onClick={() => navigate("/registration")}
+              >
                 Register
               </Dropdown.Item>
             </DropdownButton>
           )}
-          
+
           {/* Shopping Cart */}
           <Link className="nav-list-item" to="/ShoppingCart">
             <Button variant="btn-outline-light">
