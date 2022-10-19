@@ -34,18 +34,18 @@ function UserInfo() {
         <p class="email-text-user-info">email: {userState.users[0].email}</p>
         <div className="button-container-user-info">
           <button
-            className="over-btn btn btn-light button-styling-user-info"
+            className="btn btn-outline-dark button-styling-user-info btn-out"
             onClick={logOut}
           >
-            log out of account
+            Log Out
           </button>
           <button
-            className="over-btn btn btn-light button-styling-user-info"
+            className="btn btn-outline-dark button-styling-user-info"
             onClick={() => navigate("/")}
           >
             Back to home
           </button>
-          <button class="over-btn btn btn-light button-styling-user-info">
+          <button class="btn btn-outline-dark button-styling-user-info">
             Change password
           </button>
         </div>
