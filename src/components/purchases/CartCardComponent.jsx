@@ -11,23 +11,31 @@ function CartCardComponent() {
     return (
       <div className="cart-items">
         {userState.cart.map((ele) => (
-          <div className="card mb-3">
+          <div key={ele.name} className="card mb-3 item_border">
             <div className="row g-0">
               <div className="col-md-5">
                 <img
                   src={ele.image.url}
-                  className="img-thumbnail rounded-2"
+                  className="img-thumbnail"
                   alt="..."
                 ></img>
               </div>
               <div className="col-md-5">
                 <div className="card-body">
-                  <h5 className="card-title">{ele.name}</h5>
-                  <p className="card-text">
+                  <h2 className="card-title">{ele.name}</h2>
+                  <p
+                    className="card-text"
+                    style={{ fontSize: "1.2rem", marginBottom: "2rem" }}
+                  >
                     Description of Product. Taken from API
                   </p>
-                  <p>Quanity: {ele.count}</p>
-                  <div className="card_buttons">
+                  <p style={{ fontSize: "1.2rem", marginBottom: ".5rem" }}>
+                    Quanity: {ele.count}
+                  </p>
+                  <div
+                    className="card_buttons"
+                    style={{ fontSize: "1.2rem", marginBottom: ".5rem" }}
+                  >
                     <button
                       type="button"
                       className="btn btn-outline-secondary"
@@ -43,14 +51,21 @@ function CartCardComponent() {
                       onClick={() =>
                         dispatchUserState({
                           type: "REMOVE_FROM_CART",
-                          payload: ele,
+                          payload: ele
                         })
                       }
                     >
                       -
                     </button>
                   </div>
-                  <p>Price: {(ele.price * ele.count).toFixed(2)}</p>
+                  <p>Price: {(ele.price * ele.count).toFixed(2)} €</p>{" "}
+                  <hr/>
+                  <button
+                  onClick={()=>dispatchUserState({type: "REMOVE_ITEM_FROM_CART", payload: ele})}
+                  style={{ fontSize: "1rem", marginTop: "0rem" }} 
+                  type="button" className="btn btn-outline-secondary">
+                    Delete Item
+                  </button>
                 </div>
               </div>
             </div>
