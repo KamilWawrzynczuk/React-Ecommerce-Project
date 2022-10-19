@@ -13,7 +13,7 @@ function ChooseCollection() {
             </div>
             <div className="go_to go_to_red">
               {" "}
-              <i class="bi bi-arrow-bar-right"></i>
+              <i className="bi bi-arrow-bar-right"></i>
             </div>
           </div>
         </Link>
@@ -23,7 +23,7 @@ function ChooseCollection() {
               <div>Woman collection</div>
             </div>
             <div className="go_to">
-              <i class="bi bi-arrow-bar-right"></i>
+              <i className="bi bi-arrow-bar-right"></i>
             </div>
           </div>
         </Link>
@@ -33,7 +33,7 @@ function ChooseCollection() {
               <div>Kids collection</div>
             </div>
             <div className="go_to">
-              <i class="bi bi-arrow-bar-right"></i>
+              <i className="bi bi-arrow-bar-right"></i>
             </div>
           </div>
         </Link>
