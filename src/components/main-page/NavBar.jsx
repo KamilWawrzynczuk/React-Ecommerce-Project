@@ -31,7 +31,7 @@ function NavBar() {
 
   React.useEffect(() => {
     dispatch({ type: "SET_SEARCH_STATE", payload: searchState });
-  }, [state]);
+  }, []);
 
   return (
     <Navbar fixed="top" bg="light" expand="lg">
