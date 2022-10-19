@@ -49,7 +49,15 @@ function Product() {
             <span class="sr-only"></span>
           </div>
         ) : (
-          state.productsMan.map((ele, index) => (
+          state.productsMan.filter(ele=>{
+            if(state.searchState === "" ) {
+              return ele
+            } 
+            else {
+              return ele.name.toLowerCase().includes(state.searchState.toLowerCase())
+            }
+          }
+            ).map((ele, index) => (
             <div key={index} className="card product_card">
               <div className="product_title">
                 <h4 className="product_h4"> {ele.name} </h4>
