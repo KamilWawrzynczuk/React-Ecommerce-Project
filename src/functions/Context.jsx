@@ -67,6 +67,13 @@ function reducer(state, action) {
           else return ele;
         }),
       };
+      case "REMOVE_ITEM_FROM_CART":
+      return {
+        ...state,
+        cart: state.cart.filter((ele) => {
+          ele.name !== action.payload.name
+        }),
+      };
       case "REMOVE_ALL_FROM_CART":
       return {
         ...state,

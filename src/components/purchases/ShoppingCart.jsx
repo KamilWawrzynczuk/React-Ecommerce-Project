@@ -64,8 +64,8 @@ function ShoppingCart() {
                 ? "0"
                 : userState.cart
                     .map((ele) => ele.price * ele.count)
-                    .reduce((prev, curr) => prev + curr, 0)} €
-            </strong>
+                    .reduce((prev, curr) => prev + curr, 0).toFixed(2)}
+            €</strong> 
           </div>
         </Col>
       </Row>
