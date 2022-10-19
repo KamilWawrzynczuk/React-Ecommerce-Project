@@ -23,7 +23,7 @@ function App() {
     <Context>
       <FetchContext>
         <BrowserRouter>
-          <div className="container-fluid">
+          <div className="container-fluid" style={{marginTop: "100px"}}>
             <NavBar />
             <Routes>
               <Route path="/" element={<Home />} />
