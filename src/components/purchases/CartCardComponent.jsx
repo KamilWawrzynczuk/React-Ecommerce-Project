@@ -51,7 +51,7 @@ function CartCardComponent() {
                     </button>
                     <button
                       type="button"
-                      className="btn btn-outline-secondary"
+                      className="btn btn-plus btn-outline-secondary"
                       onClick={() =>
                         dispatchUserState({
                           type: "REMOVE_FROM_CART",
