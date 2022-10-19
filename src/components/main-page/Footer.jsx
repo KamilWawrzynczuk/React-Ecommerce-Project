@@ -12,19 +12,19 @@ const FlexContainer = styled.div`
   // border: solid 2px;
   // min-height: 60vh;
 `;
-const Wrapper = styled.div`
-  background: rgba(255, 255, 255, 0.8);
+// const Wrapper = styled.div`
+//   background: rgba(255, 255, 255, 0.8);
 
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  background-color: red;
-  min-height: cal(100vh-60px);
-  position: fixed;
-  bottom: 0;
-  // margin-top: 100%;
-`;
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   height: 60px;
+//   background-color: red;
+//   min-height: cal(100vh-60px);
+//   position: fixed;
+//   bottom: 0;
+//   // margin-top: 100%;
+// `;
 // const Wrapper = styled.div`
 //   // width: 100%;
 //   // background: rgba(255, 255, 255, 0.8);
