@@ -67,20 +67,7 @@ function NavBar() {
 
           {/* User Account */}
 
-          {userState.users[0].isLogin ? (
-
-            <Button variant="light" size="lg">
-              <Link className="nav-list-item" to="/userinfo">
-                <i className="bi bi-person-check-fill"></i>
-              </Link>
-            </Button>
-          ) : (
-            <Link className="nav-list-item" to="/registration">
-              <Button variant="light" size="lg">
-                <i className="bi bi-person"></i>
-              </Button>
-            </Link>
-
+           {userState.users[0].isLogin ? (
             <DropdownButton
               className="drop-down-button"
               id="dropdown-basic-button"
@@ -110,9 +97,8 @@ function NavBar() {
                 Register
               </Dropdown.Item>
             </DropdownButton>
-
           )}
-
+          
           {/* Shopping Cart */}
           <Link className="nav-list-item" to="/ShoppingCart">
             <Button variant="light">
