@@ -5,14 +5,15 @@ import Col from "react-bootstrap/Col";
 import styled from "styled-components";
 
 const FlexContainer = styled.div`
-  // // display: flex;
-  // position: relative;
-  // bottom: 0;
-  border: solid pink;
-  // // margin-top: auto;
-  // // min-height: 50vh;
-  //   position: relative;
-  //   bottom: 0;
+  display: flex;
+`;
+const Wrapper = styled.div`
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  align-self: flex-end;
+  margin-top: 2rem;
+  border-top: solid 1px;
+  margin-bottom: -5rem;
 `;
 // const Wrapper = styled.div`
 //   // width: 100%;

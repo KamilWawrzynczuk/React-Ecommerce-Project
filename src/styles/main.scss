@@ -31,6 +31,12 @@ body {
   min-height: 100%;
 }
 
+body::after {
+  content: '';
+  display: block;
+  height: 50px; /* Set same as footer's height */
+}
+
 img {
   max-width: 100%;
   display: block;
