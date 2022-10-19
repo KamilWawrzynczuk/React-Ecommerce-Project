@@ -5,22 +5,18 @@ import { dataContext } from "../../functions/Context";
 function CartCardComponent() {
   const { userState, dispatchUserState } = useContext(dataContext);
 
-  function handleDeleteItem(ele){
-    dispatchUserState({type: "REMOVE_ITEM_FROM_CART", payload: ele})
-  }
-
   if (userState.cart.length === 0) {
     return <div></div>;
   } else {
     return (
       <div className="product_contain cart-items">
         {userState.cart.map((ele) => (
-          <div key={ele.name} className="card mb-3">
+          <div key={ele.name} className="card mb-3 item_border">
             <div className="row g-0">
               <div className="col-md-5 product_img">
                 <img
                   src={ele.image.url}
-                  className="card-img-top"
+                  className="img-thumbnail"
                   alt="..."
                 ></img>
               </div>
@@ -55,7 +51,7 @@ function CartCardComponent() {
                       onClick={() =>
                         dispatchUserState({
                           type: "REMOVE_FROM_CART",
-                          payload: ele,
+                          payload: ele
                         })
                       }
                     >
@@ -65,7 +61,7 @@ function CartCardComponent() {
                   <p>Price: {(ele.price * ele.count).toFixed(2)} €</p>{" "}
                   <hr/>
                   <button
-                  onClick={()=>handleDeleteItem(ele)}
+                  onClick={()=>dispatchUserState({type: "REMOVE_ITEM_FROM_CART", payload: ele})}
                   style={{ fontSize: "1rem", marginTop: "0rem" }} 
                   type="button" className="btn btn-outline-secondary">
                     Delete Item

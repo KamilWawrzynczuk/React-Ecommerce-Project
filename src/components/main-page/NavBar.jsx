@@ -67,7 +67,7 @@ function NavBar() {
 
           {/* User Account */}
 
-          {userState.users[0].isLogin ? (
+           {userState.users[0].isLogin ? (
             <DropdownButton
               className="drop-down-button"
               id="dropdown-basic-button"
@@ -98,7 +98,7 @@ function NavBar() {
               </Dropdown.Item>
             </DropdownButton>
           )}
-
+          
           {/* Shopping Cart */}
           <Link className="nav-list-item" to="/ShoppingCart">
             <Button variant="btn-outline-light">
