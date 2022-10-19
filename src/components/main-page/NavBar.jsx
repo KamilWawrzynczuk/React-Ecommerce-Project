@@ -15,7 +15,7 @@ import { BiMenuAltLeft } from "../../../node_modules/react-icons/bi";
 function NavBar() {
   const { userState, dispatchUserState } = React.useContext(dataContext);
   const basketRef = React.useRef();
-  const searchRef = React.useRef("")
+  const searchRef = React.useRef("");
 
   // state for keeping track of searching value
   const [searchState, setSearchState] = React.useState("");
@@ -27,9 +27,8 @@ function NavBar() {
   // Product component
   React.useEffect(() => {
     dispatch({ type: "SET_SEARCH_STATE", payload: searchState });
-
   }, [searchRef.current.value]);
- 
+
   return (
     <Navbar fixed="top" bg="light" expand="lg">
       <Container fluid>
@@ -67,18 +66,37 @@ function NavBar() {
           </DropdownButton>
 
           {/* User Account */}
+
           {userState.users[0].isLogin ? (
-            <Button variant="light" size="lg">
-              <Link className="nav-list-item" to="/userinfo">
-                <i className="bi bi-person-check-fill"></i>
-              </Link>
-            </Button>
+            <DropdownButton
+              className="drop-down-button"
+              id="dropdown-basic-button"
+              variant="light"
+              size="lg"
+              title={<i className="bi bi-person-check-fill"></i>}
+            >
+              <Dropdown.Item onClick={() => navigate("/userinfo")}>
+                Your Account
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => navigate("/home")}>
+                Log Out
+              </Dropdown.Item>
+            </DropdownButton>
           ) : (
-            <Link className="nav-list-item" to="/registration">
-              <Button variant="light" size="lg">
-                <i className="bi bi-person"></i>
-              </Button>
-            </Link>
+            <DropdownButton
+              className="drop-down-button"
+              id="dropdown-basic-button"
+              variant="light"
+              size="lg"
+              title={<i className="bi bi-person"></i>}
+            >
+              <Dropdown.Item onClick={() => navigate("/login")}>
+                Login
+              </Dropdown.Item>
+              <Dropdown.Item onClick={() => navigate("/registration")}>
+                Register
+              </Dropdown.Item>
+            </DropdownButton>
           )}
 
           {/* Shopping Cart */}
@@ -114,7 +132,7 @@ function NavBar() {
               className="me-2"
               aria-label="Search"
               ref={searchRef}
-              onChange={(e)=>setSearchState(e.target.value)}
+              onChange={(e) => setSearchState(e.target.value)}
             />
             <Button onClick={() => navigate("/Product")} variant="light">
               <i className="bi bi-search"></i>
