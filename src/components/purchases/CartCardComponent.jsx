@@ -15,7 +15,7 @@ function CartCardComponent() {
     return (
       <div className="cart-items">
         {userState.cart.map((ele) => (
-          <div className="card mb-3">
+          <div key={ele.name} className="card mb-3">
             <div className="row g-0">
               <div className="col-md-5">
                 <img
