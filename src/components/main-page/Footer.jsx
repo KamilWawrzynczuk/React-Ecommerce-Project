@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import styled from "styled-components";
 
 const FlexContainer = styled.div`
-  // display: flex;
+  display: flex;
 `;
 
 
