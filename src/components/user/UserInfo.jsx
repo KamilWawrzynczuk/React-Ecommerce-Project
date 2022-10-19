@@ -28,7 +28,7 @@ function UserInfo() {
             className="btn btn-outline-dark button-styling-user-info btn-out"
             onClick={logOut}
           >
-            log out
+            Log Out
           </button>
           <button
             className="btn btn-outline-dark button-styling-user-info"
