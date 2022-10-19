@@ -10,6 +10,7 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import { Route, Link, useNavigate } from "react-router-dom";
 import { dataContext } from "../../functions/Context";
 import { fetchContext } from "../../functions/fetchContext";
+import { BiMenuAltLeft } from "../../../node_modules/react-icons/bi";
 
 function NavBar() {
   const { userState, dispatchUserState } = React.useContext(dataContext);
@@ -36,8 +37,11 @@ function NavBar() {
   return (
     <Navbar fixed="top" bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-
+        <Navbar.Toggle aria-controls="navbarScroll">
+          <p>
+            <BiMenuAltLeft />
+          </p>
+        </Navbar.Toggle>
         {/* Home Button */}
 
         <Navbar.Brand>
@@ -55,20 +59,14 @@ function NavBar() {
             size="md"
             title="Products"
           >
-            <Dropdown.Item>
-              <Link className="nav-list-item" to="/Product">
-                Men's
-              </Link>
+            <Dropdown.Item onClick={() => navigate("/Product")}>
+              Men's
             </Dropdown.Item>
-            <Dropdown.Item>
-              <Link className="nav-list-item" to="/Product">
-                Women's
-              </Link>
+            <Dropdown.Item onClick={() => navigate("/Product")}>
+              Women's
             </Dropdown.Item>
-            <Dropdown.Item>
-              <Link className="nav-list-item" to="/Product">
-                Children's
-              </Link>
+            <Dropdown.Item onClick={() => navigate("/Product")}>
+              Children's
             </Dropdown.Item>
           </DropdownButton>
 
@@ -76,13 +74,13 @@ function NavBar() {
           {userState.users[0].isLogin ? (
             <Button variant="light" size="lg">
               <Link className="nav-list-item" to="/userinfo">
-                <i class="bi bi-person-check-fill"></i>
+                <i className="bi bi-person-check-fill"></i>
               </Link>
             </Button>
           ) : (
             <Link className="nav-list-item" to="/registration">
               <Button variant="light" size="lg">
-                <i class="bi bi-person"></i>
+                <i className="bi bi-person"></i>
               </Button>
             </Link>
           )}
@@ -107,7 +105,7 @@ function NavBar() {
 
         {/* Search Bar */}
 
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse className="hamburger">
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
