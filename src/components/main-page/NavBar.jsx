@@ -29,6 +29,11 @@ function NavBar() {
     dispatch({ type: "SET_SEARCH_STATE", payload: searchState });
   }, [searchRef.current.value]);
 
+  const logOut = () => {
+    dispatchUserState({ type: "IS_LOGOUT" });
+    navigate("/");
+  };
+
   return (
     <Navbar fixed="top" bg="light" expand="lg">
       <Container fluid>
@@ -78,9 +83,7 @@ function NavBar() {
               <Dropdown.Item onClick={() => navigate("/userinfo")}>
                 Your Account
               </Dropdown.Item>
-              <Dropdown.Item onClick={() => navigate("/home")}>
-                Log Out
-              </Dropdown.Item>
+              <Dropdown.Item onClick={logOut}>Log Out</Dropdown.Item>
             </DropdownButton>
           ) : (
             <DropdownButton
