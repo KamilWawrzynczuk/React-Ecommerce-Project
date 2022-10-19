@@ -30,7 +30,7 @@ function CartCardComponent() {
                     Description of Product. Taken from API
                   </p>
                   <p style={{ fontSize: "1.2rem", marginBottom: ".5rem" }}>
-                    Quanity: {ele.count}
+                    Quantity: {ele.count}
                   </p>
                   <div
                     className="card_buttons"
@@ -38,7 +38,7 @@ function CartCardComponent() {
                   >
                     <button
                       type="button"
-                      className="btn btn-plus btn-outline-secondary"
+                      className="btn btn-plus btn-outline-secondary rounded-0"
                       onClick={() =>
                         dispatchUserState({ type: "ADD_TO_CART", payload: ele })
                       }
@@ -47,7 +47,7 @@ function CartCardComponent() {
                     </button>
                     <button
                       type="button"
-                      className="btn btn-plus btn-outline-secondary"
+                      className="btn btn-plus btn-outline-secondary rounded-0"
                       onClick={() =>
                         dispatchUserState({
                           type: "REMOVE_FROM_CART",
